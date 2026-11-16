@@ -1,0 +1,344 @@
+/* 1. Reset
+   Remove default browser space and set Poppins font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 2. Page background
+   Center the login card on the screen */
+body {
+  min-height: 100vh;
+  background: #f3eefc;
+  color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* 3. Main white card
+   Left = purple panel, right = form */
+.shell {
+  width: 100%;
+  max-width: 1100px;
+  height: 750px;
+  background: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 30px 80px rgba(91, 33, 182, 0.16);
+}
+
+/* 4. Left purple panel
+   Logo, heading, benefits list, and banner */
+.brand-panel {
+  width: 50%;
+  position: relative;
+  background: linear-gradient(160deg, #5b21b6, #7c3aed);
+  color: #ffffff;
+  padding: 40px 44px 28px;
+  overflow: hidden;
+}
+
+/* Light circles in the background */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.orb-1 {
+  width: 280px;
+  height: 280px;
+  right: -90px;
+  top: -70px;
+}
+
+.orb-2 {
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  bottom: 120px;
+}
+
+/* Logo (image + text) */
+.logo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Heading and tick list */
+.brand-copy {
+  position: relative;
+  z-index: 1;
+  margin-top: 72px;
+}
+
+.brand-copy h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.benefits {
+  margin-top: 28px;
+  list-style: none;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #ede9fe;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Banner image */
+.art {
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.art img {
+  width: 60%;
+  height: 160px;
+  background: #ffffff;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* 5. Right form panel
+   Email, password, login, Google and LinkedIn */
+.form-panel {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 56px;
+}
+
+.form-wrap {
+  width: 100%;
+  max-width: 420px;
+}
+
+.form-wrap h2 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.sub {
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 17px;
+}
+
+form {
+  margin-top: 28px;
+}
+
+/* Input box with icon on the left */
+.field {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.field .icon {
+  position: absolute;
+  left: 16px;
+  top: 19px;
+  width: 18px;
+  height: 18px;
+}
+
+.field input {
+  width: 100%;
+  height: 56px;
+  padding-left: 46px;
+  padding-right: 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: #7c3aed;
+}
+
+/* Remember me and Forgot Password */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.remember input {
+  width: 16px;
+  height: 16px;
+}
+
+.forgot {
+  color: #6d28d9;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Purple Login button */
+.submit {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 14px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #6d28d9;
+}
+
+.divider {
+  margin: 22px 0 16px;
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* Google and LinkedIn buttons */
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social {
+  width: 50%;
+  height: 52px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.social img {
+  width: 18px;
+  height: 18px;
+}
+
+.social:hover {
+  background: #f8fafc;
+}
+
+.switch {
+  margin-top: 28px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.switch a {
+  color: #6d28d9;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* 6. Mobile view
+   Stack purple panel on top of the form */
+@media (max-width: 900px) {
+  body {
+    padding: 0;
+  }
+
+  .shell {
+    height: auto;
+    min-height: 100vh;
+    border-radius: 0;
+    flex-direction: column;
+  }
+
+  .brand-panel,
+  .form-panel {
+    width: 100%;
+  }
+
+  .brand-panel {
+    padding: 28px 24px 16px;
+  }
+
+  .brand-copy {
+    margin-top: 28px;
+  }
+
+  .brand-copy h1 {
+    font-size: 38px;
+  }
+
+  .art img {
+    height: 140px;
+  }
+
+  .form-panel {
+    padding: 32px 24px 48px;
+  }
+}
