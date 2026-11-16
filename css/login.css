@@ -8,7 +8,7 @@
 }
 
 /* 2. Page background
-   Center the login card on the screen */
+   Center the card on the screen */
 body {
   min-height: 100vh;
   background: #f3eefc;
@@ -141,7 +141,7 @@ body {
 }
 
 /* 5. Right form panel
-   Email, password, login, Google and LinkedIn */
+   Used by both login.html and signup.html */
 .form-panel {
   width: 50%;
   display: flex;
@@ -167,13 +167,13 @@ body {
 }
 
 form {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 /* Input box with icon on the left */
 .field {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .field .icon {
@@ -202,7 +202,7 @@ form {
   border-color: #7c3aed;
 }
 
-/* Remember me and Forgot Password */
+/* Remember me (login) and Terms (signup) */
 .row {
   display: flex;
   justify-content: space-between;
@@ -215,7 +215,9 @@ form {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 14px;
   color: #475569;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
 }
@@ -235,7 +237,7 @@ form {
   text-decoration: underline;
 }
 
-/* Purple Login button */
+/* Purple Login / Sign Up button */
 .submit {
   width: 100%;
   height: 56px;
@@ -253,7 +255,7 @@ form {
 }
 
 .divider {
-  margin: 22px 0 16px;
+  margin: 20px 0 14px;
   text-align: center;
   color: #64748b;
   font-size: 15px;
@@ -291,7 +293,7 @@ form {
 }
 
 .switch {
-  margin-top: 28px;
+  margin-top: 24px;
   text-align: center;
   color: #64748b;
   font-size: 16px;
