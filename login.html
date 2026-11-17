@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Noventra</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="css/login.css" />
-  </head>
-  <body>
-    <main class="shell">
-      <!-- Left purple panel -->
-      <section class="brand-panel">
-        <span class="orb orb-1"></span>
-        <span class="orb orb-2"></span>
 
-        <a class="logo" href="login.html">
-          <img src="images/Noventra-logo.jpeg" alt="Noventra" />
-          Noventra
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Noventra</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
 
-        <div class="brand-copy">
-          <h1>Your Career<br />Journey Starts<br />Here</h1>
-          <ul class="benefits">
-            <li><span class="check">✓</span> Search and apply for jobs</li>
-            <li><span class="check">✓</span> Save your favorite jobs</li>
-            <li><span class="check">✓</span> Track your applications</li>
-            <li><span class="check">✓</span> Get job recommendations</li>
-          </ul>
-        </div>
+<body>
+  <main class="shell">
+    <!-- Left purple panel -->
+    <section class="brand-panel">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
 
-        <div class="art">
-          <img src="images/login-banner.png" alt="Login banner" />
-        </div>
-      </section>
+      <a class="logo" href="login.html">
+        <img src="images/Noventra-logo.jpeg" alt="Noventra" />
+        Noventra
+      </a>
 
-      <!-- Right login form -->
-      <section class="form-panel">
-        <div class="form-wrap">
-          <h2>Welcome Back!</h2>
-          <p class="sub">Login to your Noventra account</p>
+      <div class="brand-copy">
+        <h1>Your Career<br />Journey Starts<br />Here</h1>
+        <ul class="benefits">
+          <li><span class="check">✓</span> Search and apply for jobs</li>
+          <li><span class="check">✓</span> Save your favorite jobs</li>
+          <li><span class="check">✓</span> Track your applications</li>
+          <li><span class="check">✓</span> Get job recommendations</li>
+        </ul>
+      </div>
 
-          <form>
-            <div class="field">
-              <img class="icon" src="images/email.svg" alt="" />
-              <input type="email" placeholder="Email address" />
-            </div>
+      <div class="art">
+        <img src="images/login-banner.png" alt="Login banner" />
+      </div>
+    </section>
 
-            <div class="field">
-              <img class="icon" src="images/lock.svg" alt="" />
-              <input type="password" placeholder="Password" />
-            </div>
+    <!-- Right login form -->
+    <section class="form-panel">
+      <div class="form-wrap">
+        <h2>Welcome Back!</h2>
+        <p class="sub">Login to your Noventra account</p>
 
-            <div class="row">
-              <label class="remember">
-                <input type="checkbox" /> Remember me
-              </label>
-              <a class="forgot" href="#">Forgot Password?</a>
-            </div>
-
-            <button class="submit" type="button">Login</button>
-          </form>
-
-          <p class="divider">Or login with</p>
-
-          <div class="socials">
-            <button class="social" type="button">
-              <img src="images/google.svg" alt="Google" /> Google
-            </button>
-            <button class="social" type="button">
-              <img src="images/linkedin.svg" alt="LinkedIn" /> LinkedIn
-            </button>
+        <form id="loginForm">
+          <div class="field">
+            <img class="icon" src="images/email.svg" alt="" />
+            <input type="email" id="loginEmail" placeholder="Email address" required />
           </div>
 
-          <p class="switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+          <div class="field">
+            <img class="icon" src="images/lock.svg" alt="" />
+            <input type="password" id="loginPassword" placeholder="Password" required />
+          </div>
+
+          <div class="row">
+            <label class="remember">
+              <input type="checkbox" /> Remember me
+            </label>
+            <a class="forgot" href="#">Forgot Password?</a>
+          </div>
+
+          <button class="submit" type="submit">Login</button>
+        </form>
+
+        <p class="divider">Or login with</p>
+
+        <div class="socials">
+          <button class="social" type="button">
+            <img src="images/google.svg" alt="Google" /> Google
+          </button>
+          <button class="social" type="button">
+            <img src="images/linkedin.svg" alt="LinkedIn" /> LinkedIn
+          </button>
         </div>
-      </section>
-    </main>
-  </body>
+
+        <p class="switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+
 </html>
