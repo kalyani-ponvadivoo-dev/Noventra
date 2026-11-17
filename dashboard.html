@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noventra | Dashboard</title>
+    <title>Dashboard| Noventra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,25 +14,56 @@
 <body>
 
     <!-- Navigation Bar -->
-    <header class="navbar">
+    <nav class="home-navbar">
+        <div class="nav-container">
 
-        <div class="logo">
-            <img src="images/noventra-logo.png" alt="Noventra Logo">
-            <h2>Noventra</h2>
+            <a href="index.html" class="nav-logo">
+                <img src="./images/logo.png" alt="Noventra Logo">
+                <span>Noventra</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="jobs.html" class="nav-link">Find Jobs</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">Logout</a>
+            </div>
+
+            <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Navigation -->
+    <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
+
+        <div class="drawer-header">
+            <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Find Jobs</a>
-            <a href="#">Companies</a>
-        </nav>
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-link">Home</a>
+            <a href="jobs.html" class="drawer-link">Find Jobs</a>
+            <a href="index.html#about" class="drawer-link">About Us</a>
+            <a href="index.html#contact" class="drawer-link">Contact</a>
+            <a href="dashboard.html" class="drawer-link active">Dashboard</a>
 
-        <div class="profile">
-            <span>🔔</span>
-            <span class="profile-icon">K</span>
+            <div class="drawer-actions">
+                <a href="index.html" class="btn-drawer-login">Logout</a>
+            </div>
         </div>
+    </aside>>
+    </aside>
 
-    </header>
     <div class="dashboard-container">
         <!--side bar-->
         <div class="sidebar">
