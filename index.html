@@ -49,17 +49,17 @@
             <p class="navbar-link hover:underline text-gray-600"><a href="#">Employers</a></p>
         </div>
 
-        <div class="hidden md:block ">
-            <button
-                class=" text-[#30248C] border border-[#30248C] rounded-sm px-5 py-1.5 font-semibold cursor-pointer mr-5 outline-1 hover:bg-[#27198f] hover:text-white">Login</button>
-            <button class="bg-[#30248C] text-white rounded-sm  px-4 py-1.5 font-semibold cursor-pointer outline-1 ">Sign
-                Up</button>
+        <!--Sign up & Login -->
+        <div class="hidden md:flex ">
+            <a href="login.html"
+                class="text-[#30248C] border border-[#30248C] rounded-sm px-5 py-1.5 font-semibold cursor-pointer mr-5 outline-1 hover:bg-[#27198f] hover:text-white transition-colors">Login</a>
+            <a href="signup.html" 
+                class=" bg-[#30248C] text-white rounded-sm px-4 py-1.5 font-semibold cursor-pointer outline-1 hover:bg-[#27198f] transition-colors">Sign Up</a>
         </div>
 
-
-
+        <!--side nav icon-->
         <div id="menuico" class="navbar-menu-toggle md:hidden">
-            <i id="side-navbar-activate" class="fa-solid fa-bars cursor-pointer text-2xl"></i>
+            <i id="side-navbar-activate " class="fa-solid fa-bars cursor-pointer text-2xl text-[#30248C]"></i>
         </div>
     </nav>
 
@@ -70,10 +70,14 @@
             <i id="closenav" style=" cursor:pointer;" class="fa-solid fa-xmark text-white text-xl"></i>
         </div>
         <div class="navbar-links text-white px-3 pt-0 ">
-            <p class="navbar-link hover:underline m-6"><a href="#home">Home</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="index.html">Home</a></p>
             <p class="navbar-link hover:underline m-6"><a href="#">Find Jobs</a></p>
             <p class="navbar-link hover:underline m-6"><a href="#">Companies</a></p>
             <p class="navbar-link hover:underline m-6"><a href="#">Employers</a></p>
+            <div class="m-6 flex flex-col gap-3 pt-4 border-t border-white/20">
+                <a href="login.html" class="text-center text-white border border-white rounded-sm py-2 font-semibold hover:bg-white/10 transition-colors">Login</a>
+                <a href="signup.html" class="text-center bg-yellow-400 text-gray-900 rounded-sm py-2 font-semibold hover:bg-yellow-500 transition-colors">Sign Up</a>
+            </div>
         </div>
     </section>
 
@@ -410,7 +414,7 @@
 
 
 
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
