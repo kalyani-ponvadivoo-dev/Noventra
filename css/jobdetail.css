@@ -337,6 +337,72 @@ body {
   font-weight: 600;
   text-align: right;
 }
+/* submit form design */
+
+/* Job Application Form */
+
+#applicationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 600px;
+}
+
+#applicationForm .field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#applicationForm label {
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#applicationForm input,
+#applicationForm textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+#applicationForm input:focus,
+#applicationForm textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+#applicationForm textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+#applicationForm button {
+    align-self: flex-start;
+    min-width: 170px;
+}
+
+#applicationSection {
+    padding: 24px;
+    margin: 20px 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(48, 36, 140, 0.06);
+}
+
+#applicationSection h2 {
+    margin-bottom: 20px;
+    color: var(--dark-purple);
+}
 
 
 /* Mobile layout */
@@ -387,4 +453,15 @@ body {
   .job-actions .button {
     flex: 1 1 auto;
   }
+  #applicationSection {
+    padding: 18px;
+}
+
+#applicationForm {
+    width: 100%;
+}
+
+#applicationForm button {
+    width: 100%;
+}
 }

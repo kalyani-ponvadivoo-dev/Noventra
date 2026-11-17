@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="job.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jobdetail.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="brand-group">
@@ -57,114 +59,127 @@
 
           <p class="job-salary">₹5-8 LPA <span>per year</span></p>
 
-          <div class="job-actions">
-            <a class="button button-primary" href="login.html">
-              Apply now
-            </a>
+          <a class="button button-primary" href="login.html?returnTo=job-details.html">
+            Apply now
+          </a>
 
-            <button
-              class="button button-outline"
-        
-              type="button" id="saveJob"
-              
-            >
-              Save job
-            </button>
+          <button class="button button-outline" type="button" id="saveJob">
+            Save job
+          </button>
 
-            <button
-              class="button button-outline"
-    
-              type="button"
-            >
-              Share
-            </button>
-          </div>
-
-          <p id="job-action-status" role="status" aria-live="polite"></p>
-        </section>
-
-        <section class="job-section" aria-labelledby="description-heading">
-          <h2 id="description-heading">Job description</h2>
-          <p>
-            We are looking for a passionate Frontend Developer to join our
-            growing team and build user-friendly, responsive web applications.
-          </p>
-        </section>
-
-        <section class="job-section" aria-labelledby="responsibilities-heading">
-          <h2 id="responsibilities-heading">Responsibilities</h2>
-          <ul>
-            <li>Develop responsive and accessible web applications.</li>
-            <li>Write clean, scalable code using HTML, CSS, and JavaScript.</li>
-            <li>Collaborate with UI/UX designers and backend developers.</li>
-          </ul>
-        </section>
-
-        <section class="job-section" aria-labelledby="requirements-heading">
-          <h2 id="requirements-heading">Requirements</h2>
-          <ul>
-            <li>2+ years of experience in frontend development.</li>
-            <li>Strong knowledge of HTML, CSS, and JavaScript.</li>
-            <li>Experience with React is a plus.</li>
-          </ul>
-        </section>
-      </article>
-
-      <aside class="job-sidebar">
-        <section class="sidebar-card" aria-labelledby="company-heading">
-          <h2 id="company-heading">About the company</h2>
-          <p>
-            TechNova Solutions builds digital products for global clients,
-            with a focus on innovation and user experience.
-          </p>
-
-          <ul class="company-details">
-            <li>
-              <a href="https://www.technova.com"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                www.technova.com
-              </a>
-            </li>
-            <li>201-500 employees</li>
-            <li>Chennai, India</li>
-          </ul>
-        </section>
-
-        <section class="sidebar-card" aria-labelledby="job-info-heading">
-          <h2 id="job-info-heading">Job information</h2>
-
-          <dl class="job-information">
-            <div>
-              <dt>Experience</dt>
-              <dd>2-3 years</dd>
-            </div>
-            <div>
-              <dt>Employment</dt>
-              <dd>Full time</dd>
-            </div>
-            <div>
-              <dt>Work mode</dt>
-              <dd>Hybrid</dd>
-            </div>
-            <div>
-              <dt>Location</dt>
-              <dd>Chennai, India</dd>
-            </div>
-            <div>
-              <dt>Salary</dt>
-              <dd>₹5-8 LPA</dd>
-            </div>
-            <div>
-              <dt>Apply before</dt>
-              <dd>Dec 15, 2026</dd>
-            </div>
-          </dl>
-        </section>
-      </aside>
+          <button class="button button-outline" type="button">
+            Share
+          </button>
     </div>
-  
+
+    <p id="job-action-status" role="status" aria-live="polite"></p>
+    </section>
+    <section class="job-section" id="applicationSection" hidden>
+      <h2>Submit Your Application</h2>
+
+      <form id="applicationForm">
+        <div class="field">
+          <label for="applicantName">Full Name</label>
+          <input type="text" id="applicantName" required>
+        </div>
+
+        <div class="field">
+          <label for="applicantEmail">Email Address</label>
+          <input type="email" id="applicantEmail" required>
+        </div>
+
+        <div class="field">
+          <label for="coverLetter">Cover Letter</label>
+          <textarea id="coverLetter" rows="5" placeholder="Tell us why you are suitable for this role..."></textarea>
+        </div>
+
+        <button type="submit" class="button button-primary">
+          Submit Application
+        </button>
+      </form>
+    </section>
+
+    <section class="job-section" aria-labelledby="description-heading">
+      <h2 id="description-heading">Job description</h2>
+      <p>
+        We are looking for a passionate Frontend Developer to join our
+        growing team and build user-friendly, responsive web applications.
+      </p>
+    </section>
+
+    <section class="job-section" aria-labelledby="responsibilities-heading">
+      <h2 id="responsibilities-heading">Responsibilities</h2>
+      <ul>
+        <li>Develop responsive and accessible web applications.</li>
+        <li>Write clean, scalable code using HTML, CSS, and JavaScript.</li>
+        <li>Collaborate with UI/UX designers and backend developers.</li>
+      </ul>
+    </section>
+
+    <section class="job-section" aria-labelledby="requirements-heading">
+      <h2 id="requirements-heading">Requirements</h2>
+      <ul>
+        <li>2+ years of experience in frontend development.</li>
+        <li>Strong knowledge of HTML, CSS, and JavaScript.</li>
+        <li>Experience with React is a plus.</li>
+      </ul>
+    </section>
+    </article>
+
+    <aside class="job-sidebar">
+      <section class="sidebar-card" aria-labelledby="company-heading">
+        <h2 id="company-heading">About the company</h2>
+        <p>
+          TechNova Solutions builds digital products for global clients,
+          with a focus on innovation and user experience.
+        </p>
+
+        <ul class="company-details">
+          <li>
+            <a href="https://www.technova.com" target="_blank" rel="noopener noreferrer">
+              www.technova.com
+            </a>
+          </li>
+          <li>201-500 employees</li>
+          <li>Chennai, India</li>
+        </ul>
+      </section>
+
+      <section class="sidebar-card" aria-labelledby="job-info-heading">
+        <h2 id="job-info-heading">Job information</h2>
+
+        <dl class="job-information">
+          <div>
+            <dt>Experience</dt>
+            <dd>2-3 years</dd>
+          </div>
+          <div>
+            <dt>Employment</dt>
+            <dd>Full time</dd>
+          </div>
+          <div>
+            <dt>Work mode</dt>
+            <dd>Hybrid</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>Chennai, India</dd>
+          </div>
+          <div>
+            <dt>Salary</dt>
+            <dd>₹5-8 LPA</dd>
+          </div>
+          <div>
+            <dt>Apply before</dt>
+            <dd>Dec 15, 2026</dd>
+          </div>
+        </dl>
+      </section>
+    </aside>
+    </div>
+
   </main>
-  <script src="jobdetail.js"></script>
+  <script src="js/jobdetail.js"></script>
 </body>
+
 </html>

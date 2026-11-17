@@ -54,61 +54,41 @@
             <!--cards-->
             <div class="cards">
 
-                <div class="card">
-                    <div class="card applied">
-                         <span>💼</span>
-                        <h2>5</h2>
-                        <p>Applied Jobs</p>
-                    </div>
+                <div class="card applied">
+                    <span>💼</span>
+                    <h2 id="appliedCount">0</h2>
+                    <p>Applied Jobs</p>
                 </div>
 
-                <div class="card">
-                    <div class="card saved">
-                         <span>♡</span>
-                        <h2>3</h2>
-                        <p>Saved Jobs</p>
-                    </div>
+                <div class="card saved">
+                    <span>♡</span>
+                    <h2 id="savedCount">0</h2>
+                    <p>Saved Jobs</p>
                 </div>
 
-                <div class="card">
-                    <div class="card interviews">
-                        <span>📅</span>
-                        <h2>2</h2>
-                        <p>Upcoming Interviews</p>
-                    </div>
+                <div class="card interviews">
+                    <span>📅</span>
+                    <h2 id="interviewCount">0</h2>
+                    <p>Upcoming Interviews</p>
                 </div>
 
             </div>
             <div class="bottom-section">
 
-                <!--Applications-->
                 <div class="applications">
                     <h2>Recent Applications</h2>
 
                     <table>
-                        <tr>
-                            <th>Job Title</th>
-                            <th>Company</th>
-                            <th>Status</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Company</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
 
-                        <tr>
-                            <td>Frontend Developer</td>
-                            <td>Google</td>
-                            <td><span class="status review">Under Review</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>UI Designer</td>
-                            <td>Infosys</td>
-                            <td><span class="status shortlisted">Shortlisted</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>Web Developer</td>
-                            <td>Wipro</td>
-                            <td><span class="status shortlisted">Shortlisted</span></td>
-                        </tr>
+                        <tbody id="applicationsList">
+                        </tbody>
                     </table>
                 </div>
                 <!--Recommanded-->
@@ -127,23 +107,27 @@
 
                             <button>Apply Now</button>
 
-                    </div>
-
-                    <div class="job-card">
-                        <div class="job-info">
-                        <h3>UI/UX Designer</h3>
-                        <p>Infosys</p>
-                        <p>📍 Chennai</p>
                         </div>
-                        <button>Apply Now</button>
-                    </div>
 
+                        <div class="job-card">
+                            <div class="job-info">
+                                <h3>UI/UX Designer</h3>
+                                <p>Infosys</p>
+                                <p>📍 Chennai</p>
+                            </div>
+                            <button>Apply Now</button>
+                        </div>
+
+                    </div>
                 </div>
+                <div class="saved-jobs">
+                    <h2>My Saved Jobs</h2>
+                    <div id="savedJobsList"></div>
+                </div>
+
             </div>
 
         </div>
-
-    </div>
     </div>
 
 
