@@ -63,9 +63,8 @@ button, input, select {
     font-size: inherit;
 }
 
-/* ========================================================
-   Buttons
-   ======================================================== */
+
+   /* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -104,9 +103,7 @@ button, input, select {
     border-color: var(--primary-dark);
 }
 
-/* ========================================================
-   1. Navbar
-   ======================================================== */
+=============================================== */
 .home-navbar {
     position: sticky;
     top: 0;
