@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noventra | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="images/noventra-logo.png" alt="Noventra Logo">
+            <h2>Noventra</h2>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Find Jobs</a>
+            <a href="#">Companies</a>
+        </nav>
+
+        <div class="profile">
+            <span>🔔</span>
+            <span class="profile-icon">K</span>
+        </div>
+
+    </header>
+    <div class="dashboard-container">
+        <!--side bar-->
+        <div class="sidebar">
+            <p>🏠 Dashboard</p>
+            <p>💼 My Applications</p>
+            <p>♡ Saved Jobs</p>
+            <p>👤 My Profile</p>
+            <hr>
+            <p>↪ Logout</p>
+        </div>
+
+        <div class="main-content">
+            <!--welcome section-->
+            <div class="welcome-section">
+                <h1>Dashboard</h1>
+                <h2>Hello Kalyani! 👋</h2>
+                <p>Here's an overview of your job search activity.</p>
+            </div>
+            <!--cards-->
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card applied">
+                         <span>💼</span>
+                        <h2>5</h2>
+                        <p>Applied Jobs</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card saved">
+                         <span>♡</span>
+                        <h2>3</h2>
+                        <p>Saved Jobs</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card interviews">
+                        <span>📅</span>
+                        <h2>2</h2>
+                        <p>Upcoming Interviews</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bottom-section">
+
+                <!--Applications-->
+                <div class="applications">
+                    <h2>Recent Applications</h2>
+
+                    <table>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company</th>
+                            <th>Status</th>
+                        </tr>
+
+                        <tr>
+                            <td>Frontend Developer</td>
+                            <td>Google</td>
+                            <td><span class="status review">Under Review</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>UI Designer</td>
+                            <td>Infosys</td>
+                            <td><span class="status shortlisted">Shortlisted</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Web Developer</td>
+                            <td>Wipro</td>
+                            <td><span class="status shortlisted">Shortlisted</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--Recommanded-->
+                <div class="recommended">
+                    <h2>Recommended Jobs</h2>
+
+                    <div class="job-cards">
+
+                        <div class="job-card">
+
+                            <div class="job-info">
+                                <h3>Frontend Developer</h3>
+                                <p>Google</p>
+                                <p>📍 Bangalore</p>
+                            </div>
+
+                            <button>Apply Now</button>
+
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-info">
+                        <h3>UI/UX Designer</h3>
+                        <p>Infosys</p>
+                        <p>📍 Chennai</p>
+                        </div>
+                        <button>Apply Now</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
