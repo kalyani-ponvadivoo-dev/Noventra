@@ -61,23 +61,29 @@
                 <a href="index.html" class="btn-drawer-login">Logout</a>
             </div>
         </div>
-    </aside>>
     </aside>
 
     <div class="dashboard-container">
         <!--side bar-->
         <div class="sidebar">
-            <p>🏠 Dashboard</p>
-            <p>💼 My Applications</p>
-            <p>♡ Saved Jobs</p>
-            <p>👤 My Profile</p>
+            <a href="#overview" class="sidebar-link active">🏠 Dashboard</a>
+
+            <a href="#applications" class="sidebar-link">💼 My Applications</a>
+            <a href="#saved" class="sidebar-link">
+                ♡ Saved Jobs
+            </a>
+
+            <a href="#profile" class="sidebar-link">👤 My Profile</a>
+
             <hr>
-            <p>↪ Logout</p>
+
+            <p class="sidebar-logout" id="logoutBtn">⏻ Logout</p>
         </div>
+        <p class="sidebar-logout"></p>
 
         <div class="main-content">
             <!--welcome section-->
-            <div class="welcome-section">
+            <div class="welcome-section" id="overview">
                 <h1>Dashboard</h1>
                 <h2>Hello Kalyani! 👋</h2>
                 <p>Here's an overview of your job search activity.</p>
@@ -106,7 +112,7 @@
             </div>
             <div class="bottom-section">
 
-                <div class="applications">
+                <div class="applications" id="applications">
                     <h2>Recent Applications</h2>
 
                     <table>
@@ -151,18 +157,33 @@
 
                     </div>
                 </div>
-                <div class="saved-jobs">
+                <div class="saved-jobs" id="saved">
                     <h2>My Saved Jobs</h2>
                     <div id="savedJobsList"></div>
+                </div>
+                <!-- My Profile Section -->
+                <div class="profile-section" id="profile">
+                    <h2>My Profile</h2>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">👤</div>
+
+                        <h3>Kalyani</h3>
+                        <p>Job Seeker</p>
+
+                        <div class="profile-details">
+                            <p><strong>Email:</strong> kalyani@example.com</p>
+                            <p><strong>Location:</strong> India</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
         </div>
-    </div>
 
 
-    <script src="js/dashboard.js"></script>
+        <script src="js/dashboard.js"></script>
 </body>
 
 </html>

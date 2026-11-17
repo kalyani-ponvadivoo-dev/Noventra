@@ -65,3 +65,34 @@ function displaySavedJobs() {
 // Run dashboard functions
 displayApplications();
 displaySavedJobs();
+
+
+
+
+// Sidebar active menu highlighting
+const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+function updateActiveLink() {
+    const currentSection = window.location.hash || "#overview";
+
+    sidebarLinks.forEach(function(link) {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === currentSection) {
+            link.classList.add("active");
+        }
+    });
+}
+
+// Highlight when clicking a sidebar link
+sidebarLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+        updateActiveLink();
+    });
+});
+
+// Highlight when URL hash changes
+window.addEventListener("hashchange", updateActiveLink);
+
+// Set initial active link
+updateActiveLink();
