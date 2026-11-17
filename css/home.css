@@ -103,7 +103,7 @@ button, input, select {
     border-color: var(--primary-dark);
 }
 
-=============================================== */
+ /* 1. Navbar */
 .home-navbar {
     position: sticky;
     top: 0;
@@ -281,9 +281,7 @@ button, input, select {
     background-color: var(--yellow-hover);
 }
 
-/* ========================================================
-   2. Hero Section
-   ======================================================== */
+/* 2. Hero Section */
 .hero-section {
     margin: 12px;
     padding: 24px 20px 48px;
@@ -555,9 +553,7 @@ button, input, select {
     color: #d97706;
 }
 
-/* ========================================================
-   3. Floating Search Bar & Quick Category Pills
-   ======================================================== */
+/* 3. Floating Search Bar & Quick Category Pills */
 .search-section {
     max-width: 1060px;
     margin: -32px auto 0;
@@ -738,9 +734,8 @@ button, input, select {
     color: var(--primary);
 }
 
-/* ========================================================
-   4. Stats / Feature Highlights Section
-   ======================================================== */
+/*    4. Stats / Feature Highlights Section */
+   
 .features-section {
     max-width: 1140px;
     margin: 32px auto;
@@ -925,9 +920,7 @@ button, input, select {
     color: var(--primary);
 }
 
-/* ========================================================
-   6. Footer
-   ======================================================== */
+/* 6. Footer */
 .site-footer {
     background-color: var(--primary);
     color: var(--white);
