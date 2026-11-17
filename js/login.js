@@ -1,25 +1,85 @@
 
 const loginForm = document.getElementById("loginForm");
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+const loginEmailError = document.getElementById("loginEmailError");
+const loginPasswordError = document.getElementById("loginPasswordError");
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MIN_PASSWORD_LENGTH = 6;
+
+function showFieldMessage(input, errorElement, message) {
+    errorElement.textContent = message;
+
+    if (message !== "") {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
+    } else {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
+    }
+}
+
+function getLoginEmailError() {
+    const email = loginEmail.value.trim();
+
+    if (email === "") {
+        return "Email is required.";
+    }
+    if (!emailPattern.test(email)) {
+        return "Please enter a valid email, for example name@example.com.";
+    }
+    return "";
+}
+
+function getLoginPasswordError() {
+    if (loginPassword.value === "") {
+        return "Password is required.";
+    }
+    if (loginPassword.value.length < MIN_PASSWORD_LENGTH) {
+        return "Password must contain at least " + MIN_PASSWORD_LENGTH + " characters.";
+    }
+    return "";
+}
+
+function checkLoginEmail() {
+    showFieldMessage(loginEmail, loginEmailError, getLoginEmailError());
+}
+
+function checkLoginPassword() {
+    showFieldMessage(loginPassword, loginPasswordError, getLoginPasswordError());
+}
+
+function isLoginFormValid() {
+    return getLoginEmailError() === "" && getLoginPasswordError() === "";
+}
+
+loginEmail.addEventListener("input", checkLoginEmail);
+loginEmail.addEventListener("blur", checkLoginEmail);
+loginPassword.addEventListener("input", checkLoginPassword);
+loginPassword.addEventListener("blur", checkLoginPassword);
 
 loginForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Get input values
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value;
+    checkLoginEmail();
+    checkLoginPassword();
 
-    // Get registered user
+    if (!isLoginFormValid()) {
+        return;
+    }
+
+    const email = loginEmail.value.trim();
+    const password = loginPassword.value;
+
     const registeredUser = JSON.parse(
         localStorage.getItem("noventraUser")
     );
 
-    // Check whether account exists
     if (!registeredUser) {
         alert("No account found. Please sign up first.");
         return;
     }
 
-    // Validate login details
     if (
         registeredUser.email !== email ||
         registeredUser.password !== password
@@ -28,7 +88,6 @@ loginForm.addEventListener("submit", function(event) {
         return;
     }
 
-    // Store login session (without password)
     const loggedInUser = {
         name: registeredUser.name,
         email: registeredUser.email
@@ -41,7 +100,6 @@ loginForm.addEventListener("submit", function(event) {
 
     alert("Login successful!");
 
-    // Return to the requested page, if provided
     const params = new URLSearchParams(window.location.search);
     const returnTo = params.get("returnTo");
 
