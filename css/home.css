@@ -175,6 +175,40 @@ button, input, select {
     cursor: pointer;
     padding: 4px;
 }
+/* About Us and Contact Sections */
+.about-section,
+.contact-section {
+    padding: 50px 8%;
+    text-align: center;
+}
+
+.about-section {
+    background: #ffffff;
+}
+
+.contact-section {
+    background: #f7f5ff;
+}
+
+.about-container,
+.contact-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.about-section h2,
+.contact-section h2 {
+    color: #30238f;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.about-section p,
+.contact-section p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
 
 @media (min-width: 768px) {
     .nav-container {

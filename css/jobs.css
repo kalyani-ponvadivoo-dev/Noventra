@@ -130,6 +130,94 @@ input[type="checkbox"] { width: 14px; height: 14px; accent-color: var(--primary)
 .page-button { width: 31px; height: 31px; border: 1px solid var(--border); border-radius: 7px; background: white; color: #625d6d; font-size: 11px; }
 .page-button.active, .page-button:hover { border-color: var(--primary); background: var(--primary); color: white; }
 .site-footer { padding: 22px; text-align: center; color: #8b8498; font-size: 11px; border-top: 1px solid var(--border); background: white; }
+/* Shared Home Page Navbar Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.home-navbar {
+    width: 100%;
+    background: #fff;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #111827;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.nav-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: #30238f;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-actions .btn {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.nav-actions .btn-outline {
+    border: 1px solid #30238f;
+    color: #30238f;
+}
+
+.nav-actions .btn-primary {
+    background: #30238f;
+    color: white;
+}
+
+.menu-toggle,
+.mobile-drawer {
+    display: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
 @media (max-width: 850px) {
   .site-header { padding: 0 4%; gap: 15px; }

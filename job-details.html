@@ -4,29 +4,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>job-details | Noventra</title>
   <link rel="stylesheet" href="css/jobdetail.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="brand-group">
-      <img src="pictures/WhatsApp Image 2026-11-16 at 20.29.46.jpeg" alt="Noventra logo">
-      <a class="brand" href="index.html">Noventra</a>
+
+  <!-- Header / Navbar -->
+  <nav class="home-navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo.png" alt="Noventra Logo">
+        <span>Noventra</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="jobs.html" class="nav-link active">Find Jobs</a>
+        <a href="index.html#about" class="nav-link">About Us</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="dashboard.html" class="profile-link" aria-label="Go to Dashboard" title="Dashboard">
+          <i class="fa-solid fa-circle-user"></i>
+        </a>
+      </div>
+
+      <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Navigation -->
+  <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
+
+    <div class="drawer-header">
+      <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
 
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="jobs.html">Find Jobs</a>
-      <a href="#">Companies</a>
-      <a href="#">Employers</a>
-    </nav>
+    <div class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="jobs.html" class="drawer-link active">Find Jobs</a>
+      <a href="index.html#about" class="drawer-link">About Us</a>
+      <a href="index.html#contact" class="drawer-link">Contact</a>
 
-    <div class="account-links">
-      <a class="button button-outline" href="login.html">Log in</a>
-      <a class="button button-primary" href="signup.html">Sign up</a>
+      <div class="drawer-actions">
+        <a href="login.html" class="btn-drawer-login">Login</a>
+        <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
+      </div>
     </div>
-  </header>
+  </aside>
 
   <main class="job-page">
     <nav class="breadcrumb" aria-label="Breadcrumb">
