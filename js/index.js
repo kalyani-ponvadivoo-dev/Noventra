@@ -1,13 +1,16 @@
+// Mobile navigation drawer toggle
+var sidenav = document.getElementById("sidenav");
+var menuico = document.getElementById("menuico");
+var closenav = document.getElementById("closenav");
 
+if (menuico && sidenav) {
+    menuico.addEventListener("click", function () {
+        sidenav.style.left = "0";
+    });
+}
 
-var sidenav = document.getElementById("sidenav")
-var menuico = document.getElementById("menuico")
-var close = document.getElementById("closenav")
-
-menuico.addEventListener("click",function(){
-    sidenav.style.left=0
-})
-
-closenav.addEventListener("click",function(){
-    sidenav.style.left="-50%"
-})
+if (closenav && sidenav) {
+    closenav.addEventListener("click", function () {
+        sidenav.style.left = "-100%";
+    });
+}
