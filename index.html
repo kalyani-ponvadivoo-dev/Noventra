@@ -4,175 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Tailwind CSS - npm build output -->
-    <link rel="stylesheet" href="./src/output.css">
-    <!-- <link href=" https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css " rel="stylesheet" /> -->
+    <title>Noventra - Find Your Next Career Opportunity</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <!-- Home Page Stylesheet -->
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
+    <!-- 1. Header / Navbar -->
+    <nav class="home-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="./images/logo.png" alt="Noventra Logo">
+                <span>Noventra</span>
+            </a>
 
-        :root {
-            --primary: #4F16C8;
-            --dark-purple: #30248C;
-            --accent: #8B5CF6;
-            --light-purple: #EDE9FE;
-            --background: #F5F3FF;
-            --white: #FFFFFF;
-            --text-dark: #17152C;
-            --text-secondary: #6B7280;
-            --border: #E5E7EB;
-            --success: #16A34A;
-        }
-    </style>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="jobs.html" class="nav-link">Find Jobs</a>
+                <a href="#" class="nav-link">Companies</a>
+                <a href="#" class="nav-link">Employers</a>
+            </div>
 
-    <!-- Navbar -->
-    <nav  class="navbar flex justify-between items-center p-3  md:p-5 sticky top-0 z-30  bg-white left-0 shadow-xs">
-        <h1 class="text-2xl md:text-3xl font-semibold flex justify-center items-center"><img src="./image/logo.png"
-                class="w-20 h-12" alt="">Noventra</h1>
-        <div class="navbar-links hidden md:flex gap-10  ">
-            <p class="navbar-link font-semibold hover:underline"><a href="index.html">Home</a></p>
-            <p class="navbar-link hover:underline text-gray-600"><a href="#">Find Jobs</a></p>
-            <p class="navbar-link hover:underline text-gray-600"><a href="#">Companies</a></p>
-            <p class="navbar-link hover:underline text-gray-600"><a href="#">Employers</a></p>
-        </div>
+            <!-- Sign up & Login -->
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
 
-        <div class="hidden md:block ">
-            <button
-                class=" text-[#30248C] border border-[#30248C] rounded-sm px-5 py-1.5 font-semibold cursor-pointer mr-5 outline-1 hover:bg-[#27198f] hover:text-white">Login</button>
-            <button class="bg-[#30248C] text-white rounded-sm  px-4 py-1.5 font-semibold cursor-pointer outline-1 ">Sign
-                Up</button>
-        </div>
-
-
-
-        <div id="menuico" class="navbar-menu-toggle md:hidden">
-            <i id="side-navbar-activate" class="fa-solid fa-bars cursor-pointer text-2xl"></i>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- side Navbar -->
-    <section id="sidenav" class="bg-[#30248C] fixed z-100 top-0 transition-all duration-1000"
-        style="width: 50%; height:100vh; left:-50%;">
-        <div class="text-right p-5 pr-5">
-            <i id="closenav" style=" cursor:pointer;" class="fa-solid fa-xmark text-white text-xl"></i>
+    <!-- Mobile Drawer Navigation -->
+    <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
+        <div class="drawer-header">
+            <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
-        <div class="navbar-links text-white px-3 pt-0 ">
-            <p class="navbar-link hover:underline m-6"><a href="#home">Home</a></p>
-            <p class="navbar-link hover:underline m-6"><a href="#">Find Jobs</a></p>
-            <p class="navbar-link hover:underline m-6"><a href="#">Companies</a></p>
-            <p class="navbar-link hover:underline m-6"><a href="#">Employers</a></p>
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-link active">Home</a>
+            <a href="jobs.html" class="drawer-link">Find Jobs</a>
+            <a href="#" class="drawer-link">Companies</a>
+            <a href="#" class="drawer-link">Employers</a>
+            <div class="drawer-actions">
+                <a href="login.html" class="btn-drawer-login">Login</a>
+                <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
+            </div>
         </div>
-    </section>
+    </aside>
 
-
-    <section
-        class="m-3 md:m-6 p-6 pb-14  rounded-3xl relative overflow-hidden bg-gradient-to-b md:bg-gradient-to-r from-[#38208f] via-[#7545d5]  via-60% to-white to-85%">
-        <div
-            class="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-white/30 rounded-3xl px-3 py-1.5 text-white w-[250px] shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2"
-                stroke="currentColor" class="w-5 h-4 inline-block text-yellow-300">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-            </svg>
-            <span class="text-sm font-medium">Your Dream Job Awaits!</span>
-        </div>
-
-        <div class="grid md:grid-cols-2 p-2 font-semibold mt-4 md:mt-2 items-center">
-            <h1 class="text-3xl md:text-6xl space-y-3 md:space-y-8 text-white">
-                <span class="block">Find Your Career</span>
-                <span class="block">Path with <span class="text-yellow-400">Noventra</span></span>
-
-                <div class="text-sm md:text-base font-normal text-purple-200">
-                    <p>Begin Your Professional Journey with Noventra, Your Trusted Companion in Navigating the Dynamic
-                        Landscape of Career Opportunities, Offering Tailored Solutions for Your Success.</p>
+    <!-- 2. Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" class="badge-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                    </svg>
+                    <span>Your Dream Job Awaits!</span>
                 </div>
-            </h1>
+
+                <h1 class="hero-title">
+                    Find Your Career<br>
+                    Path with <span class="highlight-text">Noventra</span>
+                </h1>
+
+                <p class="hero-description">
+                    Begin Your Professional Journey with Noventra, Your Trusted Companion in Navigating the Dynamic
+                    Landscape of Career Opportunities, Offering Tailored Solutions for Your Success.
+                </p>
+            </div>
 
             <!-- Image with Floating Cards -->
-            <div class="flex justify-center items-center mt-6 md:mt-0">
-                <div class="relative md:-top-8 w-full max-w-[280px] sm:max-w-[340px] md:w-[380px] lg:w-[420px]">
-
-                    <!-- Main Image -->
-                    <img class="w-full h-auto object-contain mx-auto" src="./image/img.png" alt="Career Candidate">
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <!-- Main Candidate Graphic -->
+                    <img class="hero-candidate-img" src="./images/img.png" alt="Career Candidate">
 
                     <!-- Top-Left Floating Card: Data Engineer -->
-                    <div
-                        class="absolute top-5 -left-10 sm:top-10 sm:-left-6 md:top-8 md:-left-15 bg-white p-2.5 sm:p-4 rounded-2xl shadow-xl border border-gray-100 max-w-[200px] sm:max-w-[260px] scale-90 sm:scale-100 origin-top-left z-10">
-                        <div class="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
-                            <div class="flex items-center gap-2">
-                                <div
-                                    class="w-7 h-7 sm:w-9 sm:h-9 bg-blue-800 rounded-xl flex items-center justify-center text-white text-xs sm:text-sm shadow-sm">
+                    <div class="floating-card card-data-engineer">
+                        <div class="card-header">
+                            <div class="card-info">
+                                <div class="card-icon blue-icon">
                                     <i class="fa-solid fa-chart-pie"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-800 text-xs sm:text-sm leading-tight">Data Engineer
-                                    </h4>
-                                    <p class="text-[9px] sm:text-[10px] text-gray-400">Logo Text</p>
+                                    <h4 class="card-title">Data Engineer</h4>
+                                    <p class="card-subtitle">Logo Text</p>
                                 </div>
                             </div>
-                            <span class="text-[9px] sm:text-[10px] text-gray-400 font-medium whitespace-nowrap">19
-                                March</span>
+                            <span class="card-date">19 March</span>
                         </div>
-                        <div class="flex items-center gap-1 pt-0.5">
-                            <span
-                                class="bg-gray-100 text-gray-600 text-[9px] sm:text-xs px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full font-medium">Full
-                                time</span>
-                            <span
-                                class="bg-gray-100 text-gray-600 text-[9px] sm:text-xs px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full font-medium">$8
-                                - $15 / Hourly</span>
+                        <div class="card-tags">
+                            <span class="tag">Full time</span>
+                            <span class="tag">$8 - $15 / Hourly</span>
                         </div>
                     </div>
 
-
-
                     <!-- Bottom Floating Card: Software Engineering -->
-                    <div
-                        class="absolute -bottom-5 md:-bottom-6 left-1/2 -translate-x-1/2 bg-white px-3.5 py-2 sm:px-4 sm:py-3 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-2.5 sm:gap-3 min-w-[190px] sm:min-w-[240px] scale-90 sm:scale-100 origin-bottom z-10">
-                        <div
-                            class="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 text-xs sm:text-sm">
+                    <div class="floating-card card-software-engineer">
+                        <div class="card-icon amber-icon">
                             <i class="fa-solid fa-code"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-800 text-xs sm:text-sm leading-tight">Software Engineering
-                            </h4>
-                            <p class="text-[10px] sm:text-[11px] text-gray-400 font-normal">264 Jobs</p>
+                            <h4 class="card-title">Software Engineering</h4>
+                            <p class="card-subtitle">264 Jobs</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Search Bar Section (Floating over hero) -->
-    <section class="max-w-5xl mx-auto px-4 -mt-8 md:-mt-14 relative z-20">
-        <div class="bg-white p-2.5 md:p-3 rounded-3xl md:rounded-full shadow-xl border border-gray-100 flex flex-col md:flex-row items-center gap-3">
-            
-            <!-- Job  input -->
-            <div class="flex items-center gap-3 px-4 py-2 flex-1 w-full border-b md:border-b-0 md:border-r border-gray-200">
-                <i class="fa-solid fa-magnifying-glass text-gray-500 text-base"></i>
-                <input class="w-full outline-none text-sm text-gray-700 bg-transparent placeholder-gray-600" 
-                       type="text" placeholder="Search jobs ">
+    <!-- 3. Search Bar Section (Floating over hero) -->
+    <section class="search-section">
+        <div class="search-box">
+            <!-- Keyword Input -->
+            <div class="search-field">
+                <i class="fa-solid fa-magnifying-glass field-icon"></i>
+                <input class="field-input" type="text" placeholder="Search jobs">
             </div>
 
-            <!-- Location dropdown -->
-            <div class="flex items-center gap-3 px-4 py-2 flex-1 w-full border-b md:border-b-0 md:border-r border-gray-200">
-                <i class="fa-solid fa-location-dot text-gray-500 text-base"></i>
-                <select class="w-full outline-none text-sm text-gray-600 bg-transparent cursor-pointer">
+            <!-- Location Dropdown -->
+            <div class="search-field">
+                <i class="fa-solid fa-location-dot field-icon"></i>
+                <select class="field-select">
                     <option value="">Select Location</option>
                     <option value="chennai">Chennai</option>
                     <option value="bangalore">Bangalore</option>
@@ -182,10 +147,10 @@
                 </select>
             </div>
 
-            <!-- Category dropdown -->
-            <div class="flex items-center gap-3 px-4 py-2 flex-1 w-full">
-                <i class="fa-solid fa-table-cells-large text-gray-500 text-base"></i>
-                <select class="w-full outline-none text-sm text-gray-600 bg-transparent cursor-pointer">
+            <!-- Category Dropdown -->
+            <div class="search-field">
+                <i class="fa-solid fa-table-cells-large field-icon"></i>
+                <select class="field-select">
                     <option value="">Select Category</option>
                     <option value="it">IT & Software</option>
                     <option value="marketing">Marketing</option>
@@ -196,221 +161,208 @@
             </div>
 
             <!-- Search Button -->
-            <button class="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-full flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer whitespace-nowrap">
-                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            <button class="btn-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <span>Search Jobs</span>
             </button>
         </div>
 
-        <!-- Quick Category Icons Bar -->
-        <div class="flex items-center justify-center gap-3 md:gap-4 overflow-x-auto py-6 px-2 scrollbar-track-white ">
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-laptop-code text-blue-600 text-lg"></i>
-                <span class="text-xs font-medium">IT & Software</span>
+        <!-- Quick Category Pills Bar -->
+        <div class="category-pills">
+            <div class="pill">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>IT & Software</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-arrow-trend-up text-blue-500 text-lg"></i>
-                <span class="text-xs font-medium">Marketing</span>
+            <div class="pill">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <span>Marketing</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-stethoscope text-blue-600 text-lg"></i>
-                <span class="text-xs font-medium">Healthcare</span>
+            <div class="pill">
+                <i class="fa-solid fa-stethoscope"></i>
+                <span>Healthcare</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-palette text-blue-600 text-lg"></i>
-                <span class="text-xs font-medium">Design</span>
+            <div class="pill">
+                <i class="fa-solid fa-palette"></i>
+                <span>Design</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-calculator text-blue-600 text-lg"></i>
-                <span class="text-xs font-medium">Finance</span>
+            <div class="pill">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Finance</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-bullhorn text-blue-600 text-lg"></i>
-                <span class="text-xs font-medium">Sales</span>
+            <div class="pill">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Sales</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-gear text-blue-600 text-lg"></i>
-                <span class="text-xs font-medium">Engineering</span>
+            <div class="pill">
+                <i class="fa-solid fa-gear"></i>
+                <span>Engineering</span>
             </div>
-            <div class="bg-white hover:bg-purple-50 text-gray-700 hover:text-[#30248C] border border-gray-100 rounded-2xl p-3 px-4 shadow-xs flex flex-col items-center gap-1.5 transition-all cursor-pointer min-w-[95px] text-center">
-                <i class="fa-solid fa-ellipsis text-gray-500 text-lg"></i>
-                <span class="text-xs font-medium">More</span>
+            <div class="pill">
+                <i class="fa-solid fa-ellipsis"></i>
+                <span>More</span>
             </div>
         </div>
     </section>
 
-    <!-- 4 Stats / Feature Highlights Section -->
-    <section class="max-w-6xl mx-auto  px-4 my-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <div class="bg-purple-50/70 hover:bg-purple-100/60 border border-purple-100 p-5 rounded-2xl flex flex-col items-center text-center transition-all shadow-xs">
-                <div class="w-12 h-12  rounded-xl bg-white flex items-center justify-center text-[#30248C] text-xl shadow-xs mb-3">
+    <!-- 4. Stats / Feature Highlights Section -->
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fa-solid fa-briefcase"></i>
                 </div>
-                <h3 class="text-lg md:text-xl font-bold text-gray-800">10,000+</h3>
-                <p class="text-xs md:text-sm text-gray-500 font-medium mt-0.5">Job Openings</p>
+                <h3 class="feature-value">10,000+</h3>
+                <p class="feature-label">Job Openings</p>
             </div>
 
-            <div class="bg-purple-50/70 hover:bg-purple-100/60 border border-purple-100 p-5 rounded-2xl flex flex-col items-center text-center transition-all shadow-xs">
-                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#30248C] text-xl shadow-xs mb-3">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fa-solid fa-building"></i>
                 </div>
-                <h3 class="text-lg md:text-xl font-bold text-gray-800">Top</h3>
-                <p class="text-xs md:text-sm text-gray-500 font-medium mt-0.5">Companies</p>
+                <h3 class="feature-value">Top</h3>
+                <p class="feature-label">Companies</p>
             </div>
 
-            <div class="bg-purple-50/70 hover:bg-purple-100/60 border border-purple-100 p-5 rounded-2xl flex flex-col items-center text-center transition-all shadow-xs">
-                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#30248C] text-xl shadow-xs mb-3">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
-                <h3 class="text-lg md:text-xl font-bold text-gray-800">Remote</h3>
-                <p class="text-xs md:text-sm text-gray-500 font-medium mt-0.5">Opportunities</p>
+                <h3 class="feature-value">Remote</h3>
+                <p class="feature-label">Opportunities</p>
             </div>
 
-            <div class="bg-purple-50/70 hover:bg-purple-100/60 border border-purple-100 p-5 rounded-2xl flex flex-col items-center text-center transition-all shadow-xs">
-                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#30248C] text-xl shadow-xs mb-3">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
-                <h3 class="text-lg md:text-xl font-bold text-gray-800">Career</h3>
-                <p class="text-xs md:text-sm text-gray-500 font-medium mt-0.5">Growth</p>
+                <h3 class="feature-value">Career</h3>
+                <p class="feature-label">Growth</p>
             </div>
         </div>
     </section>
 
-    <!-- Explore Jobs by Category Section -->
-    <section class="max-w-6xl mx-auto px-4 my-12">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Explore Jobs by Category</h2>
-            <a href="#" class="text-[#30248C] font-semibold flex items-center gap-1.5 hover:underline text-sm md:text-base">
+    <!-- 5. Explore Jobs by Category Section -->
+    <section class="categories-section">
+        <div class="section-header">
+            <h2 class="section-title">Explore Jobs by Category</h2>
+            <a href="jobs.html" class="section-link">
                 <span>View All</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            <!-- Category 1 -->
-            <div class="bg-white hover:bg-purple-50/60 border border-gray-100 hover:border-purple-200 p-6 rounded-2xl flex flex-col items-center text-center gap-3 transition-all shadow-xs hover:shadow-md cursor-pointer group">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-[#30248C] group-hover:text-white flex items-center justify-center text-[#30248C] text-xl transition-all">
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
                     <i class="fa-solid fa-code"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700 group-hover:text-[#30248C]">IT & Software</span>
+                <span class="category-name">IT & Software</span>
             </div>
 
-            <!-- Category 2 -->
-            <div class="bg-white hover:bg-purple-50/60 border border-gray-100 hover:border-purple-200 p-6 rounded-2xl flex flex-col items-center text-center gap-3 transition-all shadow-xs hover:shadow-md cursor-pointer group">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-[#30248C] group-hover:text-white flex items-center justify-center text-[#30248C] text-xl transition-all">
+            <div class="category-card">
+                <div class="category-icon">
                     <i class="fa-solid fa-chart-simple"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700 group-hover:text-[#30248C]">Data & Analytics</span>
+                <span class="category-name">Data & Analytics</span>
             </div>
 
-            <!-- Category 3 -->
-            <div class="bg-white hover:bg-purple-50/60 border border-gray-100 hover:border-purple-200 p-6 rounded-2xl flex flex-col items-center text-center gap-3 transition-all shadow-xs hover:shadow-md cursor-pointer group">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-[#30248C] group-hover:text-white flex items-center justify-center text-[#30248C] text-xl transition-all">
+            <div class="category-card">
+                <div class="category-icon">
                     <i class="fa-solid fa-bullhorn"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700 group-hover:text-[#30248C]">Marketing</span>
+                <span class="category-name">Marketing</span>
             </div>
 
-            <!-- Category 4 -->
-            <div class="bg-white hover:bg-purple-50/60 border border-gray-100 hover:border-purple-200 p-6 rounded-2xl flex flex-col items-center text-center gap-3 transition-all shadow-xs hover:shadow-md cursor-pointer group">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-[#30248C] group-hover:text-white flex items-center justify-center text-[#30248C] text-xl transition-all">
+            <div class="category-card">
+                <div class="category-icon">
                     <i class="fa-solid fa-briefcase"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700 group-hover:text-[#30248C]">Finance</span>
+                <span class="category-name">Finance</span>
             </div>
 
-            <!-- Category 5 -->
-            <div class="bg-white hover:bg-purple-50/60 border border-gray-100 hover:border-purple-200 p-6 rounded-2xl flex flex-col items-center text-center gap-3 transition-all shadow-xs hover:shadow-md cursor-pointer group">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-[#30248C] group-hover:text-white flex items-center justify-center text-[#30248C] text-xl transition-all">
+            <div class="category-card">
+                <div class="category-icon">
                     <i class="fa-solid fa-pen-nib"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700 group-hover:text-[#30248C]">Design</span>
+                <span class="category-name">Design</span>
             </div>
 
-            <!-- Category 6 -->
-            <div class="bg-white hover:bg-purple-50/60 border border-gray-100 hover:border-purple-200 p-6 rounded-2xl flex flex-col items-center text-center gap-3 transition-all shadow-xs hover:shadow-md cursor-pointer group">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-[#30248C] group-hover:text-white flex items-center justify-center text-[#30248C] text-xl transition-all">
+            <div class="category-card">
+                <div class="category-icon">
                     <i class="fa-solid fa-users"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700 group-hover:text-[#30248C]">HR</span>
+                <span class="category-name">HR</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer  -->
-    <footer class="bg-[#30248C] text-white pt-14 pb-8 mt-20">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
-            
+    <!-- 6. Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
             <!-- Col 1: Brand Info -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2">
-                    <img src="./image/logo.png" class="w-14 h-10 bg-white rounded-lg p-1" alt="Noventra">
-                    <span class="text-2xl font-bold tracking-tight text-white">Noventra</span>
+            <div class="footer-brand">
+                <div class="brand-row">
+                    <img src="./images/logo.png" class="brand-img" alt="Noventra">
+                    <span class="brand-name">Noventra</span>
                 </div>
-                <p class="text-sm text-purple-200 leading-relaxed">
+                <p class="brand-text">
                     A modern, responsive job portal connecting job seekers and employers through a simple and user-friendly platform.
                 </p>
-                <div class="flex gap-3 pt-2">
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-yellow-400 hover:text-gray-900 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-yellow-400 hover:text-gray-900 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-yellow-400 hover:text-gray-900 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-yellow-400 hover:text-gray-900 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
             <!-- Col 2: Quick Links -->
-            <div>
-                <h4 class="text-base font-semibold text-white mb-4">Quick Links</h4>
-                <ul class="space-y-2.5 text-sm text-purple-200">
-                    <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Find Jobs</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Companies</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Employers</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">About Us</a></li>
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Find Jobs</a></li>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Employers</a></li>
+                    <li><a href="#">About Us</a></li>
                 </ul>
             </div>
 
-            <!-- Col 3: Popular Categories -->
-            <div>
-                <h4 class="text-base font-semibold text-white mb-4">Job Categories</h4>
-                <ul class="space-y-2.5 text-sm text-purple-200">
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">IT & Software</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Data & Analytics</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Marketing & Sales</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Finance & Accounting</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition-colors">Design & Creative</a></li>
+            <!-- Col 3: Job Categories -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Job Categories</h4>
+                <ul class="footer-list">
+                    <li><a href="#">IT & Software</a></li>
+                    <li><a href="#">Data & Analytics</a></li>
+                    <li><a href="#">Marketing & Sales</a></li>
+                    <li><a href="#">Finance & Accounting</a></li>
+                    <li><a href="#">Design & Creative</a></li>
                 </ul>
             </div>
 
-            <!-- Col 4: Newsletter / Contact -->
-            <div>
-                <h4 class="text-base font-semibold text-white mb-4">Stay Connected</h4>
-                <p class="text-sm text-purple-200 mb-3">Subscribe to get the latest job alerts and career tips.</p>
-                <div class="flex flex-col gap-2">
-                    <input type="email" placeholder="Enter your email" 
-                           class="w-full px-4 py-2.5 rounded-xl bg-white/10 text-white placeholder-purple-300 text-sm border border-purple-400/30 outline-none focus:border-yellow-400">
-                    <button class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2.5 rounded-xl text-sm transition-all shadow-md cursor-pointer">
-                        Subscribe
-                    </button>
-                </div>
+            <!-- Col 4: Newsletter -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <p class="newsletter-desc">Subscribe to get the latest job alerts and career tips.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
             </div>
-
         </div>
 
         <!-- Copyright Bottom Bar -->
-        <div class="max-w-6xl mx-auto px-4 mt-12 pt-6 border-t border-purple-800/80 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-purple-300">
+        <div class="footer-bottom">
             <p>© 2026 Noventra. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-yellow-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-yellow-400 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-yellow-400 transition-colors">Cookie Policy</a>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
             </div>
         </div>
     </footer>
 
-
-
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
