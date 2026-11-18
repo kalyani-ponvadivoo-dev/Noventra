@@ -14,55 +14,52 @@
 
 <body>
 
-  <!-- Header / Navbar -->
-  <nav class="home-navbar">
-    <div class="nav-container">
+ <nav class="home-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="./images/logo.png" alt="Noventra Logo">
+                <span>Noventra</span>
+            </a>
 
-      <a href="index.html" class="nav-logo">
-        <img src="./images/logo.png" alt="Noventra Logo">
-        <span>Noventra</span>
-      </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link ">Home</a>
+                <a href="jobs.html" class="nav-link active">Find Jobs</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
 
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="jobs.html" class="nav-link active">Find Jobs</a>
-        <a href="index.html#about" class="nav-link">About Us</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
-      </div>
-      <div class="nav-actions">
-        <a href="dashboard.html" class="profile-link" aria-label="Go to Dashboard" title="Dashboard">
-          <i class="fa-solid fa-circle-user"></i>
-        </a>
-      </div>
+            <!-- Login / Signup / Profile / Logout -->
+            <div class="nav-actions" id="navActions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
 
-      <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-    </div>
-  </nav>
+    <!-- Mobile Drawer Navigation -->
+    <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
+        <div class="drawer-header">
+            <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-link active">Home</a>
+            <a href="jobs.html" class="drawer-link">Find Jobs</a>
+            <a href="#about" class="drawer-link">About Us</a>
+            <a href="#contact" class="drawer-link">Contact</a>
 
-  <!-- Mobile Drawer Navigation -->
-  <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
-
-    <div class="drawer-header">
-      <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-
-    <div class="drawer-links">
-      <a href="index.html" class="drawer-link">Home</a>
-      <a href="jobs.html" class="drawer-link active">Find Jobs</a>
-      <a href="index.html#about" class="drawer-link">About Us</a>
-      <a href="index.html#contact" class="drawer-link">Contact</a>
-
-      <div class="drawer-actions">
-        <a href="login.html" class="btn-drawer-login">Login</a>
-        <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
-      </div>
-    </div>
-  </aside>
+            <div class="drawer-actions" id="drawerActions">
+                <a href="login.html" class="btn-drawer-login">Login</a>
+                <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
+            </div>
+        </div>
+    </aside>
 
 
   <main>
@@ -142,7 +139,8 @@
   </main>
 
   <footer class="site-footer">© 2026 Noventra. Find your next opportunity.</footer>
+  <script src="js/jobData.js"></script>
   <script src="js/jobs.js"></script>
-</body>
+  <script src="js/navbar.js"></script>
 
 </html>

@@ -130,9 +130,11 @@ body {
     color: #51249b;
     font-weight: 600;
 }
+
 .sidebar p:hover {
     background: rgba(255, 255, 255, 0.15);
 }
+
 .sidebar-link {
     display: flex;
     align-items: center;
@@ -144,19 +146,24 @@ body {
     border-radius: 10px;
     transition: 0.3s ease;
 }
+
 .sidebar-link.active {
     background-color: #eadcff;
     color: #51249b;
     font-weight: 600;
 }
+
+
 .sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
+
 .sidebar .sidebar-link.active {
     background-color: #eadcff;
     color: #51249b;
     font-weight: 600;
 }
+
 .profile-icon {
     filter: hue-rotate(40deg);
     font-size: 20px;
@@ -290,6 +297,15 @@ td {
     background-color: #F3E8FF;
     color: #7E22CE;
 }
+#applications, #saved, #profile{
+    scroll-margin-top: 100px;
+}
+
+#applications:target, #saved:target, #profile:target {
+    outline: 3px solid #c4a5ff;
+    outline-offset: 5px;
+    border-radius: 15px;
+}
 
 /* recommanded */
 .recommended {
@@ -395,6 +411,7 @@ td {
     flex: 1;
     margin: 0;
 }
+
 /* profile */
 .bottom-section {
     display: grid;
@@ -424,6 +441,7 @@ td {
     margin-top: 20px;
     line-height: 2;
 }
+
 .applications,
 .recommended,
 .saved-jobs,
@@ -436,6 +454,7 @@ td {
     border-radius: 16px;
     box-shadow: 0 3px 12px rgba(50, 30, 100, 0.06);
 }
+
 /* ===================
 mobile resposive
 =================== */
@@ -445,6 +464,7 @@ mobile resposive
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .navbar nav {
         display: none;
@@ -485,5 +505,116 @@ mobile resposive
     .job-cards {
         flex-direction: column;
     }
+    /* Mobile navbar */
+.home-navbar .nav-links,
+.home-navbar .nav-actions {
+    display: none;
+}
 
+.home-navbar .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #30238f;
+    cursor: pointer;
+}
+
+/* Mobile navigation drawer */
+
+.mobile-drawer {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 270px;
+    max-width: 85%;
+    height: calc(100vh - 80px);
+    background: linear-gradient(180deg, #51249b, #402080);
+    padding: 20px 15px;
+    z-index: 1100;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    box-sizing: border-box;
+}
+
+.mobile-drawer.active {
+    left: 0;
+}
+
+
+.drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.drawer-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+}
+.drawer-actions {
+    margin-top: 10px;
+}
+.btn-drawer-login {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+}
+.sidebar {
+    display: none;
+}
+
+/* Drawer close button */
+.drawer-header {
+    display: flex;
+    justify-content: flex-end;
+}
+.drawer-close {
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Drawer logout */
+.drawer-actions {
+    margin-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+}
+
+.btn-drawer-login {
+    display: block;
+    color: white !important;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+/* Compact drawer spacing */
+.drawer-links {
+    gap: 8px;
+}
+}
+@media (max-width: 768px) {
+    #sidenav #closenav {
+        background: transparent !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: none !important;
+        appearance: none;
+    }
+
+    #sidenav .drawer-actions a.btn-drawer-login {
+        color: #ffffff !important;
+        opacity: 1 !important;
+        font-weight: 600;
+    }
 }

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -50,14 +51,19 @@
             </button>
         </div>
 
+
         <div class="drawer-links">
             <a href="index.html" class="drawer-link">Home</a>
             <a href="jobs.html" class="drawer-link">Find Jobs</a>
             <a href="index.html#about" class="drawer-link">About Us</a>
             <a href="index.html#contact" class="drawer-link">Contact</a>
-            <a href="dashboard.html" class="drawer-link active">Dashboard</a>
 
-            <div class="drawer-actions">
+            <a href="dashboard.html" class="drawer-link active">Dashboard</a>
+            <a href="#applications" class="drawer-link">My Applications</a>
+            <a href="#saved" class="drawer-link">Saved Jobs</a>
+            <a href="#profile" class="drawer-link">My Profile</a>
+
+            <div class="drawer-actions" id="drawerActions">
                 <a href="index.html" class="btn-drawer-login">Logout</a>
             </div>
         </div>
@@ -92,21 +98,21 @@
             <div class="cards">
 
                 <div class="card applied">
-                    <span>💼</span>
+                    <i class="fa-solid fa-file-circle-check"></i>
                     <h2 id="appliedCount">0</h2>
                     <p>Applied Jobs</p>
                 </div>
 
                 <div class="card saved">
-                    <span>♡</span>
+                    <i class="fa-solid fa-bookmark"></i>
                     <h2 id="savedCount">0</h2>
                     <p>Saved Jobs</p>
                 </div>
 
-                <div class="card interviews">
-                    <span>📅</span>
-                    <h2 id="interviewCount">0</h2>
-                    <p>Upcoming Interviews</p>
+                <div class="card available">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h2 id="availableJobsCount">0</h2>
+                    <p>Available Jobs</p>
                 </div>
 
             </div>
@@ -128,33 +134,11 @@
                         </tbody>
                     </table>
                 </div>
-                <!--Recommanded-->
                 <div class="recommended">
                     <h2>Recommended Jobs</h2>
 
-                    <div class="job-cards">
-
-                        <div class="job-card">
-
-                            <div class="job-info">
-                                <h3>Frontend Developer</h3>
-                                <p>Google</p>
-                                <p>📍 Bangalore</p>
-                            </div>
-
-                            <button>Apply Now</button>
-
-                        </div>
-
-                        <div class="job-card">
-                            <div class="job-info">
-                                <h3>UI/UX Designer</h3>
-                                <p>Infosys</p>
-                                <p>📍 Chennai</p>
-                            </div>
-                            <button>Apply Now</button>
-                        </div>
-
+                    <div class="job-cards" id="recommendedJobsList">
+                        <!-- Jobs will be displayed dynamically using JavaScript -->
                     </div>
                 </div>
                 <div class="saved-jobs" id="saved">
@@ -172,7 +156,7 @@
                         <p>Job Seeker</p>
 
                         <div class="profile-details">
-                           <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
                             <p><strong>Location:</strong> India</p>
                         </div>
                     </div>
@@ -183,7 +167,9 @@
         </div>
 
 
+        <script src="js/jobData.js"></script>
         <script src="js/dashboard.js"></script>
+        <script src="js/index.js"></script>
 </body>
 
 </html>

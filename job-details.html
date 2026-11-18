@@ -13,51 +13,47 @@
 
 <body>
 
-  <!-- Header / Navbar -->
   <nav class="home-navbar">
     <div class="nav-container">
-
       <a href="index.html" class="nav-logo">
         <img src="./images/logo.png" alt="Noventra Logo">
         <span>Noventra</span>
       </a>
 
       <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link ">Home</a>
         <a href="jobs.html" class="nav-link active">Find Jobs</a>
-        <a href="index.html#about" class="nav-link">About Us</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
 
-      <div class="nav-actions">
-        <a href="dashboard.html" class="profile-link" aria-label="Go to Dashboard" title="Dashboard">
-          <i class="fa-solid fa-circle-user"></i>
-        </a>
+      <!-- Login / Signup / Profile / Logout -->
+      <div class="nav-actions" id="navActions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
       </div>
 
+      <!-- Mobile Menu Toggle Button -->
       <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
         <i class="fa-solid fa-bars"></i>
       </button>
-
     </div>
   </nav>
 
   <!-- Mobile Drawer Navigation -->
   <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
-
     <div class="drawer-header">
       <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-
     <div class="drawer-links">
-      <a href="index.html" class="drawer-link">Home</a>
-      <a href="jobs.html" class="drawer-link active">Find Jobs</a>
-      <a href="index.html#about" class="drawer-link">About Us</a>
-      <a href="index.html#contact" class="drawer-link">Contact</a>
+      <a href="index.html" class="drawer-link active">Home</a>
+      <a href="jobs.html" class="drawer-link">Find Jobs</a>
+      <a href="#about" class="drawer-link">About Us</a>
+      <a href="#contact" class="drawer-link">Contact</a>
 
-      <div class="drawer-actions">
+      <div class="drawer-actions" id="drawerActions">
         <a href="login.html" class="btn-drawer-login">Login</a>
         <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
       </div>
@@ -76,26 +72,28 @@
     <div class="job-layout">
       <article class="job-main-card">
         <div class="company-heading">
-          <div class="company-logo" aria-hidden="true">T</div>
+          <div class="company-logo" id="companyInitial" aria-hidden="true">T</div>
           <div>
-            <h2>TechNova Solutions</h2>
+            <h2 id="companyName">TechNova Solutions</h2>
             <p>Information Technology · 201-500 employees</p>
           </div>
         </div>
 
         <section class="job-summary" aria-labelledby="job-title">
-          <h1 id="job-title">Frontend Developer</h1>
+          <h1 id="jobTitle">Frontend Developer</h1>
 
           <ul class="job-meta" aria-label="Job summary">
-            <li>Chennai, India</li>
-            <li>Full time</li>
-            <li>Hybrid</li>
-            <li>2-3 years</li>
+            <li id="jobLocation">Chennai, India</li>
+            <li id="jobType">Full Time</li>
+            <li id="jobExperience">2-3 Years</li>
           </ul>
 
-          <p class="job-salary">₹5-8 LPA <span>per year</span></p>
+          <p class="job-salary">
+            <span id="jobSalary">₹5 – 8 LPA</span>
+            <span>per year</span>
+          </p>
 
-          <a class="button button-primary" href="login.html?returnTo=job-details.html">
+          <a class="button button-primary" href="#" id="applyJob">
             Apply now
           </a>
 
@@ -137,38 +135,24 @@
 
     <section class="job-section" aria-labelledby="description-heading">
       <h2 id="description-heading">Job description</h2>
-      <p>
-        We are looking for a passionate Frontend Developer to join our
-        growing team and build user-friendly, responsive web applications.
-      </p>
+      <p id="jobDescription"></p>
     </section>
 
     <section class="job-section" aria-labelledby="responsibilities-heading">
       <h2 id="responsibilities-heading">Responsibilities</h2>
-      <ul>
-        <li>Develop responsive and accessible web applications.</li>
-        <li>Write clean, scalable code using HTML, CSS, and JavaScript.</li>
-        <li>Collaborate with UI/UX designers and backend developers.</li>
-      </ul>
+      <ul id="jobResponsibilities"></ul>
     </section>
 
     <section class="job-section" aria-labelledby="requirements-heading">
       <h2 id="requirements-heading">Requirements</h2>
-      <ul>
-        <li>2+ years of experience in frontend development.</li>
-        <li>Strong knowledge of HTML, CSS, and JavaScript.</li>
-        <li>Experience with React is a plus.</li>
-      </ul>
+      <ul id="jobRequirements"></ul>
     </section>
     </article>
 
     <aside class="job-sidebar">
       <section class="sidebar-card" aria-labelledby="company-heading">
         <h2 id="company-heading">About the company</h2>
-        <p>
-          TechNova Solutions builds digital products for global clients,
-          with a focus on innovation and user experience.
-        </p>
+        <p id="companyDescription"></p>
 
         <ul class="company-details">
           <li>
@@ -176,8 +160,8 @@
               www.technova.com
             </a>
           </li>
-          <li>201-500 employees</li>
-          <li>Chennai, India</li>
+          <li id="companySize"></li>
+          <li id="companyLocation"></li>
         </ul>
       </section>
 
@@ -187,27 +171,27 @@
         <dl class="job-information">
           <div>
             <dt>Experience</dt>
-            <dd>2-3 years</dd>
+            <dd id="sidebarExperience"></dd>
           </div>
           <div>
             <dt>Employment</dt>
-            <dd>Full time</dd>
+            <dd id="sidebarEmployment"></dd>
           </div>
           <div>
             <dt>Work mode</dt>
-            <dd>Hybrid</dd>
+            <dd id="sidebarWorkMode"></dd>
           </div>
           <div>
             <dt>Location</dt>
-            <dd>Chennai, India</dd>
+            <dd id="sidebarLocation"></dd>
           </div>
           <div>
             <dt>Salary</dt>
-            <dd>₹5-8 LPA</dd>
+            <dd id="sidebarSalary"></dd>
           </div>
           <div>
             <dt>Apply before</dt>
-            <dd>Dec 15, 2026</dd>
+            <dd id="sidebarDeadline"></dd>
           </div>
         </dl>
       </section>
@@ -215,7 +199,9 @@
     </div>
 
   </main>
+  <script src="js/jobData.js"></script>
   <script src="js/jobdetail.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
 
 </html>
