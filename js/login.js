@@ -5,13 +5,16 @@ loginForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Get input values
-    const email = document.getElementById("loginEmail").value.trim();
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
     const password = document.getElementById("loginPassword").value;
 
-    // Get registered user
-    const registeredUser = JSON.parse(
-        localStorage.getItem("noventraUser")
-    );
+    // Get all registered users
+    const users = JSON.parse(localStorage.getItem("noventraUsers")) || [];
+
+    // Find user by email
+    const registeredUser = users.find(function(user) {
+        return user.email === email;
+    });
 
     // Check whether account exists
     if (!registeredUser) {
@@ -19,17 +22,15 @@ loginForm.addEventListener("submit", function(event) {
         return;
     }
 
-    // Validate login details
-    if (
-        registeredUser.email !== email ||
-        registeredUser.password !== password
-    ) {
+    // Check password
+    if (registeredUser.password !== password) {
         alert("Invalid email or password!");
         return;
     }
 
-    // Store login session (without password)
+    // Store logged-in user details
     const loggedInUser = {
+        id: registeredUser.id,
         name: registeredUser.name,
         email: registeredUser.email
     };
@@ -41,7 +42,7 @@ loginForm.addEventListener("submit", function(event) {
 
     alert("Login successful!");
 
-    // Return to the requested page, if provided
+    // Redirect to requested page, if provided
     const params = new URLSearchParams(window.location.search);
     const returnTo = params.get("returnTo");
 

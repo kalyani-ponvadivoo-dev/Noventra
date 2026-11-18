@@ -1,42 +1,4 @@
-// Noventra Job Listings: sample data and client-side filtering.
-const jobs = [
-  {
-    id: 1, title: "Frontend Developer", company: "TechNova Solutions",
-    initial: "T", color: "#6542d2", location: "Chennai", type: "Full Time",
-    experience: "2-3 Years", salary: 8, salaryLabel: "₹5 – 8 LPA",
-    posted: "2 days ago", relevance: 1
-  },
-  {
-    id: 2, title: "Full Stack Developer", company: "SunDrive Technologies",
-    initial: "S", color: "#2875bd", location: "Bengaluru", type: "Full Time",
-    experience: "2-3 Years", salary: 9, salaryLabel: "₹6 – 9 LPA",
-    posted: "1 day ago", relevance: 2
-  },
-  {
-    id: 3, title: "UI/UX Designer", company: "CreativeHive",
-    initial: "C", color: "#a45bd4", location: "Hyderabad", type: "Full Time",
-    experience: "2-4 Years", salary: 10, salaryLabel: "₹5 – 10 LPA",
-    posted: "3 days ago", relevance: 3
-  },
-  {
-    id: 4, title: "QA Engineer", company: "DeltaWorks",
-    initial: "D", color: "#7255c7", location: "Bengaluru", type: "Full Time",
-    experience: "1-3 Years", salary: 7, salaryLabel: "₹4 – 7 LPA",
-    posted: "4 days ago", relevance: 4
-  },
-  {
-    id: 5, title: "Python Developer", company: "CodeBridge Labs",
-    initial: "P", color: "#319b89", location: "Chennai", type: "Remote",
-    experience: "Fresher", salary: 5, salaryLabel: "₹3 – 5 LPA",
-    posted: "5 days ago", relevance: 5
-  },
-  {
-    id: 6, title: "Product Design Intern", company: "PixelCraft Studio",
-    initial: "P", color: "#d18a42", location: "Remote", type: "Internship",
-    experience: "Fresher", salary: 3, salaryLabel: "₹2 – 3 LPA",
-    posted: "1 week ago", relevance: 6
-  }
-];
+
 
 const jobList = document.getElementById("jobList");
 const jobCount = document.getElementById("jobCount");
@@ -45,8 +7,19 @@ const pagination = document.getElementById("pagination");
 const sortJobs = document.getElementById("sortJobs");
 const locationFilter = document.getElementById("locationFilter");
 const filtersPanel = document.getElementById("filtersPanel");
+// Get the currently logged-in user
+const loggedInUser = JSON.parse(
+  localStorage.getItem("noventraLoggedInUser")
+);
+
+// Create a separate storage key for each user
+const savedJobsKey = loggedInUser
+  ? `noventraSavedJobs_${loggedInUser.id}`
+  : null;
+
+// Get saved jobs belonging to this user
 const savedJobs = new Map(
-  (JSON.parse(localStorage.getItem("noventraSavedJobs")) || [])
+  (JSON.parse(localStorage.getItem(savedJobsKey)) || [])
     .map(job => [job.id, job])
 );
 const jobsPerPage = 5;
@@ -158,7 +131,7 @@ function createJobCard(job) {
     <div class="job-bottom">
       <span class="salary">${job.salaryLabel}</span>
       <span class="posted">Posted ${job.posted}</span>
-      <a class="view-link" href="job-details.html" aria-label="View ${job.title} details">View Details →</a>
+      <a class="view-link" href="job-details.html?id=${job.id}" aria-label="View ${job.title} details"> View Details →</a>
     </div>`;
   return article;
 }
@@ -233,6 +206,13 @@ jobList.addEventListener("click", (event) => {
   const saveButton = event.target.closest("[data-save-id]");
   if (!saveButton) return;
 
+  // Check whether user is logged in
+  if (!loggedInUser) {
+    alert("Please login to save jobs.");
+    window.location.href = "login.html";
+    return;
+  }
+
   const jobId = Number(saveButton.dataset.saveId);
 
   if (savedJobs.has(jobId)) {
@@ -245,9 +225,9 @@ jobList.addEventListener("click", (event) => {
     }
   }
 
-  // Store saved jobs
+  // Save jobs using the logged-in user's ID
   localStorage.setItem(
-    "noventraSavedJobs",
+    savedJobsKey,
     JSON.stringify([...savedJobs.values()])
   );
 
