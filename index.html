@@ -31,8 +31,8 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
 
-            <!-- Login / Signup / Profile / Logout -->
-            <div class="nav-actions" id="navActions">
+            <!-- Sign up & Login (Dynamically updated by JS) -->
+            <div class="nav-actions" id="navAuthActions">
                 <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="signup.html" class="btn btn-primary">Sign Up</a>
             </div>
@@ -57,7 +57,7 @@
             <a href="#about" class="drawer-link">About Us</a>
             <a href="#contact" class="drawer-link">Contact</a>
 
-            <div class="drawer-actions" id="drawerActions">
+            <div class="drawer-actions" id="drawerAuthActions">
                 <a href="login.html" class="btn-drawer-login">Login</a>
                 <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
             </div>
@@ -135,13 +135,13 @@
             <!-- Keyword Input -->
             <div class="search-field">
                 <i class="fa-solid fa-magnifying-glass field-icon"></i>
-                <input class="field-input" type="text" placeholder="Search jobs">
+                <input id="searchKeyword" class="field-input" type="text" placeholder="Search jobs">
             </div>
 
             <!-- Location Dropdown -->
             <div class="search-field">
                 <i class="fa-solid fa-location-dot field-icon"></i>
-                <select class="field-select">
+                <select id="searchLocation" class="field-select">
                     <option value="">Select Location</option>
                     <option value="chennai">Chennai</option>
                     <option value="bangalore">Bangalore</option>
@@ -154,7 +154,7 @@
             <!-- Category Dropdown -->
             <div class="search-field">
                 <i class="fa-solid fa-table-cells-large field-icon"></i>
-                <select class="field-select">
+                <select id="searchCategory" class="field-select">
                     <option value="">Select Category</option>
                     <option value="it">IT & Software</option>
                     <option value="marketing">Marketing</option>
@@ -165,7 +165,7 @@
             </div>
 
             <!-- Search Button -->
-            <button class="btn-search">
+            <button id="searchBtn" class="btn-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span>Search Jobs</span>
             </button>
