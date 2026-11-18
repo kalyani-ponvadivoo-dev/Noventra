@@ -1,4 +1,18 @@
+// Get currently logged-in user
+const loggedInUser = JSON.parse(
+    localStorage.getItem("noventraLoggedInUser")
+);
 
+// Display welcome message
+document.getElementById("welcomeMessage").textContent =
+    `Hello ${loggedInUser.name}! 👋`;
+
+// Display profile details
+document.getElementById("profileName").textContent =
+    loggedInUser.name;
+
+document.getElementById("profileEmail").textContent =
+    loggedInUser.email;
 // Get saved and applied jobs from localStorage
 const savedJobs = JSON.parse(localStorage.getItem("noventraSavedJobs")) || [];
 const appliedJobs = JSON.parse(localStorage.getItem("noventraAppliedJobs")) || [];
@@ -65,3 +79,34 @@ function displaySavedJobs() {
 // Run dashboard functions
 displayApplications();
 displaySavedJobs();
+
+
+
+
+// Sidebar active menu highlighting
+const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+function updateActiveLink() {
+    const currentSection = window.location.hash || "#overview";
+
+    sidebarLinks.forEach(function(link) {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === currentSection) {
+            link.classList.add("active");
+        }
+    });
+}
+
+// Highlight when clicking a sidebar link
+sidebarLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+        updateActiveLink();
+    });
+});
+
+// Highlight when URL hash changes
+window.addEventListener("hashchange", updateActiveLink);
+
+// Set initial active link
+updateActiveLink();
