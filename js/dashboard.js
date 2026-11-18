@@ -1,4 +1,18 @@
+// Get currently logged-in user
+const loggedInUser = JSON.parse(
+    localStorage.getItem("noventraLoggedInUser")
+);
 
+// Display welcome message
+document.getElementById("welcomeMessage").textContent =
+    `Hello ${loggedInUser.name}! 👋`;
+
+// Display profile details
+document.getElementById("profileName").textContent =
+    loggedInUser.name;
+
+document.getElementById("profileEmail").textContent =
+    loggedInUser.email;
 // Get saved and applied jobs from localStorage
 const savedJobs = JSON.parse(localStorage.getItem("noventraSavedJobs")) || [];
 const appliedJobs = JSON.parse(localStorage.getItem("noventraAppliedJobs")) || [];
