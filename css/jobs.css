@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 /* Noventra Job Listings Page */
 :root {
   --primary: #5420c9;
@@ -132,7 +133,6 @@ input[type="checkbox"] { width: 14px; height: 14px; accent-color: var(--primary)
 .page-button.active, .page-button:hover { border-color: var(--primary); background: var(--primary); color: white; }
 .site-footer { padding: 22px; text-align: center; color: #8b8498; font-size: 11px; border-top: 1px solid var(--border); background: white; }
 /* Shared Home Page Navbar Styles */
-
 
 .home-navbar {
     width: 100%;
