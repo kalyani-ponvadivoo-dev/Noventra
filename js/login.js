@@ -68,27 +68,27 @@ loginForm.addEventListener("submit", function(event) {
         return;
     }
 
-    const email = loginEmail.value.trim();
+    const email = loginEmail.value.trim().toLowerCase();
     const password = loginPassword.value;
 
-    const registeredUser = JSON.parse(
-        localStorage.getItem("noventraUser")
-    );
+    const users = JSON.parse(localStorage.getItem("noventraUsers")) || [];
+
+    const registeredUser = users.find(function(user) {
+        return user.email === email;
+    });
 
     if (!registeredUser) {
         alert("No account found. Please sign up first.");
         return;
     }
 
-    if (
-        registeredUser.email !== email ||
-        registeredUser.password !== password
-    ) {
+    if (registeredUser.password !== password) {
         alert("Invalid email or password!");
         return;
     }
 
     const loggedInUser = {
+        id: registeredUser.id,
         name: registeredUser.name,
         email: registeredUser.email
     };

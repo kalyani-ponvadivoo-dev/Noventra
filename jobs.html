@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,56 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="Noventra home"><span class="brand-mark">N</span> Noventra</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+ <nav class="home-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="./images/logo.png" alt="Noventra Logo">
+                <span>Noventra</span>
+            </a>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="#">Home</a>
-      <a class="active" href="#">Find Jobs</a>
-      <a href="#">Companies</a>
-      <a href="#">Employers</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link ">Home</a>
+                <a href="jobs.html" class="nav-link active">Find Jobs</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Login / Signup / Profile / Logout -->
+            <div class="nav-actions" id="navActions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
     </nav>
 
-    <div class="header-actions">
-      <a class="btn btn-outline" href="#">Login</a>
-      <a class="btn btn-primary" href="#">Sign Up</a>
-    </div>
-  </header>
+    <!-- Mobile Drawer Navigation -->
+    <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
+        <div class="drawer-header">
+            <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-link active">Home</a>
+            <a href="jobs.html" class="drawer-link">Find Jobs</a>
+            <a href="#about" class="drawer-link">About Us</a>
+            <a href="#contact" class="drawer-link">Contact</a>
+
+            <div class="drawer-actions" id="drawerActions">
+                <a href="login.html" class="btn-drawer-login">Login</a>
+                <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
+            </div>
+        </div>
+    </aside>
+
 
   <main>
     <section class="hero">
@@ -106,6 +139,8 @@
   </main>
 
   <footer class="site-footer">© 2026 Noventra. Find your next opportunity.</footer>
+  <script src="js/jobData.js"></script>
   <script src="js/jobs.js"></script>
-</body>
+  <script src="js/navbar.js"></script>
+
 </html>

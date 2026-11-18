@@ -134,23 +134,29 @@ signupForm.addEventListener("submit", function(event) {
     }
 
     const name = signupName.value.trim();
-    const email = signupEmail.value.trim();
+    const email = signupEmail.value.trim().toLowerCase();
     const password = signupPassword.value;
 
-    const existingUser = JSON.parse(localStorage.getItem("noventraUser"));
+    const users = JSON.parse(localStorage.getItem("noventraUsers")) || [];
 
-    if (existingUser && existingUser.email === email) {
+    const existingUser = users.find(function(user) {
+        return user.email === email;
+    });
+
+    if (existingUser) {
         alert("This email is already registered. Please login.");
         return;
     }
 
     const user = {
+        id: Date.now(),
         name: name,
         email: email,
         password: password
     };
 
-    localStorage.setItem("noventraUser", JSON.stringify(user));
+    users.push(user);
+    localStorage.setItem("noventraUsers", JSON.stringify(users));
 
     alert("Account created successfully!");
     window.location.href = "login.html";

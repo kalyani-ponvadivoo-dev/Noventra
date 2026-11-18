@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noventra - Find Your Next Career Opportunity</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Home Page Stylesheet -->
@@ -26,12 +27,12 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="jobs.html" class="nav-link">Find Jobs</a>
-                <a href="#" class="nav-link">Companies</a>
-                <a href="#" class="nav-link">Employers</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
 
-            <!-- Sign up & Login -->
-            <div class="nav-actions">
+            <!-- Sign up & Login (Dynamically updated by JS) -->
+            <div class="nav-actions" id="navAuthActions">
                 <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="signup.html" class="btn btn-primary">Sign Up</a>
             </div>
@@ -53,9 +54,10 @@
         <div class="drawer-links">
             <a href="index.html" class="drawer-link active">Home</a>
             <a href="jobs.html" class="drawer-link">Find Jobs</a>
-            <a href="#" class="drawer-link">Companies</a>
-            <a href="#" class="drawer-link">Employers</a>
-            <div class="drawer-actions">
+            <a href="#about" class="drawer-link">About Us</a>
+            <a href="#contact" class="drawer-link">Contact</a>
+
+            <div class="drawer-actions" id="drawerAuthActions">
                 <a href="login.html" class="btn-drawer-login">Login</a>
                 <a href="signup.html" class="btn-drawer-signup">Sign Up</a>
             </div>
@@ -67,8 +69,10 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" class="badge-icon">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2"
+                        stroke="currentColor" class="badge-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                     </svg>
                     <span>Your Dream Job Awaits!</span>
                 </div>
@@ -131,13 +135,13 @@
             <!-- Keyword Input -->
             <div class="search-field">
                 <i class="fa-solid fa-magnifying-glass field-icon"></i>
-                <input class="field-input" type="text" placeholder="Search jobs">
+                <input id="searchKeyword" class="field-input" type="text" placeholder="Search jobs">
             </div>
 
             <!-- Location Dropdown -->
             <div class="search-field">
                 <i class="fa-solid fa-location-dot field-icon"></i>
-                <select class="field-select">
+                <select id="searchLocation" class="field-select">
                     <option value="">Select Location</option>
                     <option value="chennai">Chennai</option>
                     <option value="bangalore">Bangalore</option>
@@ -150,7 +154,7 @@
             <!-- Category Dropdown -->
             <div class="search-field">
                 <i class="fa-solid fa-table-cells-large field-icon"></i>
-                <select class="field-select">
+                <select id="searchCategory" class="field-select">
                     <option value="">Select Category</option>
                     <option value="it">IT & Software</option>
                     <option value="marketing">Marketing</option>
@@ -161,7 +165,7 @@
             </div>
 
             <!-- Search Button -->
-            <button class="btn-search">
+            <button id="searchBtn" class="btn-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span>Search Jobs</span>
             </button>
@@ -295,7 +299,30 @@
             </div>
         </div>
     </section>
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>About Noventra</h2>
+            <p>
+                Noventra is a modern job portal designed to connect job seekers
+                with exciting career opportunities. Our goal is to make job
+                searching simple, accessible, and convenient.
+            </p>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? We'd love to hear from you.</p>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                Email: support@noventra.com
+            </p>
+        </div>
+    </section>
+    ```
     <!-- 6. Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -306,7 +333,8 @@
                     <span class="brand-name">Noventra</span>
                 </div>
                 <p class="brand-text">
-                    A modern, responsive job portal connecting job seekers and employers through a simple and user-friendly platform.
+                    A modern, responsive job portal connecting job seekers and employers through a simple and
+                    user-friendly platform.
                 </p>
                 <div class="social-links">
                     <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -322,9 +350,10 @@
                 <ul class="footer-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="jobs.html">Find Jobs</a></li>
-                    <li><a href="#">Companies</a></li>
-                    <li><a href="#">Employers</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
                 </ul>
             </div>
 
@@ -363,6 +392,7 @@
     </footer>
 
     <script src="js/index.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>
