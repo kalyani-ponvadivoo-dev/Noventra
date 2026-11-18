@@ -54,7 +54,7 @@ if (user) {
     var userData = JSON.parse(user);
     var userName = userData.name ? userData.name.split(" ")[0] : "User";
 
-    // 2. Laptop screen (shows: Tamil's Dashboard)
+    // 2. Laptop screen 
     navActions.innerHTML = 
         '<a href="dashboard.html" class="btn btn-outline">' + userName + "'s Dashboard</a>" +
         '<button id="logoutBtn" class="btn btn-primary" style="cursor:pointer;">Logout</button>';
@@ -65,7 +65,7 @@ if (user) {
         window.location.reload();
     });
 
-    // 3. Phone screen (shows: Tamil's Dashboard)
+    // 3. Phone screen 
     drawerActions.innerHTML = 
         '<a href="dashboard.html" class="btn-drawer-signup" style="text-align:center;">' + userName + "'s Dashboard</a>" +
         '<button id="drawerLogoutBtn" class="btn-drawer-login" style="cursor:pointer;">Logout</button>';
