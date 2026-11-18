@@ -249,6 +249,39 @@ body {
   .sort-label + select { max-width: 145px; padding: 9px 6px; }
   .job-card { padding: 13px 11px; }
   .job-meta, .job-bottom { margin-left: 0; }
+   .home-navbar {
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .nav-logo {
+        font-size: 21px;
+        gap: 8px;
+    }
+
+    .nav-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        color: #30238f;
+        cursor: pointer;
+    }
+
+   
 }
 @media (max-width: 390px) {
   .brand { font-size: 17px; }
