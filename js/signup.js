@@ -1,144 +1,25 @@
 
 const signupForm = document.getElementById("signupForm");
-const signupName = document.getElementById("signupName");
-const signupEmail = document.getElementById("signupEmail");
-const signupPassword = document.getElementById("signupPassword");
-const confirmPassword = document.getElementById("confirmPassword");
-const termsCheckbox = document.getElementById("termsCheckbox");
-
-const signupNameError = document.getElementById("signupNameError");
-const signupEmailError = document.getElementById("signupEmailError");
-const signupPasswordError = document.getElementById("signupPasswordError");
-const confirmPasswordError = document.getElementById("confirmPasswordError");
-const termsError = document.getElementById("termsError");
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MIN_PASSWORD_LENGTH = 6;
-
-function showFieldMessage(input, errorElement, message) {
-    errorElement.textContent = message;
-
-    if (input === null) {
-        return;
-    }
-
-    if (message !== "") {
-        input.classList.add("invalid");
-        input.classList.remove("valid");
-    } else {
-        input.classList.remove("invalid");
-        input.classList.add("valid");
-    }
-}
-
-function getNameError() {
-    if (signupName.value.trim() === "") {
-        return "Name is required. Please enter your name.";
-    }
-    return "";
-}
-
-function getEmailError() {
-    const email = signupEmail.value.trim();
-
-    if (email === "") {
-        return "Email is required.";
-    }
-    if (!emailPattern.test(email)) {
-        return "Please enter a valid email, for example name@example.com.";
-    }
-    return "";
-}
-
-function getPasswordError() {
-    if (signupPassword.value === "") {
-        return "Password is required.";
-    }
-    if (signupPassword.value.length < MIN_PASSWORD_LENGTH) {
-        return "Password must contain at least " + MIN_PASSWORD_LENGTH + " characters.";
-    }
-    return "";
-}
-
-function getConfirmPasswordError() {
-    if (confirmPassword.value === "") {
-        return "Confirm password is required.";
-    }
-    if (confirmPassword.value !== signupPassword.value) {
-        return "Passwords do not match!";
-    }
-    return "";
-}
-
-function getTermsError() {
-    if (!termsCheckbox.checked) {
-        return "Please agree to the Terms and Privacy Policy.";
-    }
-    return "";
-}
-
-function checkName() {
-    showFieldMessage(signupName, signupNameError, getNameError());
-}
-
-function checkEmail() {
-    showFieldMessage(signupEmail, signupEmailError, getEmailError());
-}
-
-function checkPassword() {
-    showFieldMessage(signupPassword, signupPasswordError, getPasswordError());
-}
-
-function checkConfirmPassword() {
-    showFieldMessage(confirmPassword, confirmPasswordError, getConfirmPasswordError());
-}
-
-function checkTerms() {
-    showFieldMessage(null, termsError, getTermsError());
-}
-
-function isSignupFormValid() {
-    return getNameError() === "" &&
-        getEmailError() === "" &&
-        getPasswordError() === "" &&
-        getConfirmPasswordError() === "" &&
-        getTermsError() === "";
-}
-
-signupName.addEventListener("input", checkName);
-signupName.addEventListener("blur", checkName);
-signupEmail.addEventListener("input", checkEmail);
-signupEmail.addEventListener("blur", checkEmail);
-signupPassword.addEventListener("input", function () {
-    checkPassword();
-    if (confirmPassword.value !== "") {
-        checkConfirmPassword();
-    }
-});
-signupPassword.addEventListener("blur", checkPassword);
-confirmPassword.addEventListener("input", checkConfirmPassword);
-confirmPassword.addEventListener("blur", checkConfirmPassword);
-termsCheckbox.addEventListener("change", checkTerms);
 
 signupForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    checkName();
-    checkEmail();
-    checkPassword();
-    checkConfirmPassword();
-    checkTerms();
+    // Get input values
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim().toLowerCase();
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (!isSignupFormValid()) {
+    // Check password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
         return;
     }
 
-    const name = signupName.value.trim();
-    const email = signupEmail.value.trim().toLowerCase();
-    const password = signupPassword.value;
-
+    // Get all registered users
     const users = JSON.parse(localStorage.getItem("noventraUsers")) || [];
 
+    // Check whether email already exists
     const existingUser = users.find(function(user) {
         return user.email === email;
     });
@@ -148,6 +29,7 @@ signupForm.addEventListener("submit", function(event) {
         return;
     }
 
+    // Create new user object
     const user = {
         id: Date.now(),
         name: name,
@@ -155,9 +37,14 @@ signupForm.addEventListener("submit", function(event) {
         password: password
     };
 
+    // Add new user to the array
     users.push(user);
+
+    // Save all users
     localStorage.setItem("noventraUsers", JSON.stringify(users));
 
     alert("Account created successfully!");
+
+    // Redirect to login
     window.location.href = "login.html";
 });
