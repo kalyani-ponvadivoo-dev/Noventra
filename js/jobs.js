@@ -45,7 +45,10 @@ const pagination = document.getElementById("pagination");
 const sortJobs = document.getElementById("sortJobs");
 const locationFilter = document.getElementById("locationFilter");
 const filtersPanel = document.getElementById("filtersPanel");
-const savedJobs = new Set();
+const savedJobs = new Map(
+  (JSON.parse(localStorage.getItem("noventraSavedJobs")) || [])
+    .map(job => [job.id, job])
+);
 const jobsPerPage = 5;
 let currentPage = 1;
 
@@ -105,7 +108,9 @@ function createJobCard(job) {
     <div class="job-bottom">
       <span class="salary">${job.salaryLabel}</span>
       <span class="posted">Posted ${job.posted}</span>
-      <a class="view-link" href="#" aria-label="View ${job.title} details">View Details →</a>
+      
+<a class="view-link" href="job-details.html?id=${job.id}" aria-label="View ${job.title} details">View Details →</a>
+
     </div>`;
   return article;
 }
@@ -176,8 +181,23 @@ jobList.addEventListener("click", (event) => {
   if (!saveButton) return;
 
   const jobId = Number(saveButton.dataset.saveId);
-  if (savedJobs.has(jobId)) savedJobs.delete(jobId);
-  else savedJobs.add(jobId);
+
+  if (savedJobs.has(jobId)) {
+    savedJobs.delete(jobId);
+  } else {
+    const job = jobs.find(job => job.id === jobId);
+
+    if (job) {
+      savedJobs.set(jobId, job);
+    }
+  }
+
+  // Store saved jobs
+  localStorage.setItem(
+    "noventraSavedJobs",
+    JSON.stringify([...savedJobs.values()])
+  );
+
   renderJobs();
 });
 
@@ -194,3 +214,4 @@ menuToggle.addEventListener("click", () => {
 });
 
 renderJobs();
+
