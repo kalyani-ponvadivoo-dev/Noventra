@@ -11,14 +11,16 @@
 </head>
 
 <body>
-  <main class="shell">
+  <main class="shell shell-signup">
     <!-- Left purple panel -->
     <section class="brand-panel">
       <span class="orb orb-1"></span>
       <span class="orb orb-2"></span>
 
       <a class="logo" href="login.html">
-        <img src="images/Noventra-logo.jpeg" alt="Noventra" />
+        <span class="logo-mark">
+          <img src="images/Noventra-logo.jpeg" alt="Noventra" />
+        </span>
         Noventra
       </a>
 
@@ -43,32 +45,35 @@
         <h2>Create Account</h2>
         <p class="sub">Sign up for your Noventra account</p>
 
-        <form id="signupForm">
+        <form id="signupForm" novalidate>
           <div class="field">
             <img class="icon" src="images/user.svg" alt="" />
-            <input type="text" id="signupName" placeholder="Full name" required />
+            <input type="text" id="signupName" placeholder="Full name" autocomplete="off" />
+            <p class="error" id="signupNameError"></p>
           </div>
 
           <div class="field">
             <img class="icon" src="images/email.svg" alt="" />
-            <input type="email" id="signupEmail" placeholder="Email address" required />
+            <input type="email" id="signupEmail" placeholder="Email address" autocomplete="off" />
+            <p class="error" id="signupEmailError"></p>
           </div>
 
           <div class="field">
             <img class="icon" src="images/lock.svg" alt="" />
-            <input type="password" id="signupPassword" placeholder="Password" required />
+            <input type="password" id="signupPassword" placeholder="Password" autocomplete="off" />
+            <p class="error" id="signupPasswordError"></p>
           </div>
 
           <div class="field">
             <img class="icon" src="images/lock.svg" alt="" />
-            <div class="input-group">
-              <input type="password" id="confirmPassword" placeholder="Confirm password" required />
-            </div>
+            <input type="password" id="confirmPassword" placeholder="Confirm password" autocomplete="off" />
+            <p class="error" id="confirmPasswordError"></p>
           </div>
 
           <label class="remember">
-            <input type="checkbox" id="termsCheckbox" required />I agree to the Terms and Privacy Policy
+            <input type="checkbox" id="termsCheckbox" /> I agree to the Terms and Privacy Policy
           </label>
+          <p class="error" id="termsError"></p>
 
           <button class="submit" type="submit">Sign Up</button>
         </form>

@@ -18,7 +18,9 @@
       <span class="orb orb-2"></span>
 
       <a class="logo" href="login.html">
-        <img src="images/Noventra-logo.jpeg" alt="Noventra" />
+        <span class="logo-mark">
+          <img src="images/Noventra-logo.jpeg" alt="Noventra" />
+        </span>
         Noventra
       </a>
 
@@ -43,15 +45,17 @@
         <h2>Welcome Back!</h2>
         <p class="sub">Login to your Noventra account</p>
 
-        <form id="loginForm">
+        <form id="loginForm" novalidate>
           <div class="field">
             <img class="icon" src="images/email.svg" alt="" />
-            <input type="email" id="loginEmail" placeholder="Email address" required />
+            <input type="email" id="loginEmail" placeholder="Email address" autocomplete="off" />
+            <p class="error" id="loginEmailError"></p>
           </div>
 
           <div class="field">
             <img class="icon" src="images/lock.svg" alt="" />
-            <input type="password" id="loginPassword" placeholder="Password" required />
+            <input type="password" id="loginPassword" placeholder="Password" autocomplete="off" />
+            <p class="error" id="loginPasswordError"></p>
           </div>
 
           <div class="row">
