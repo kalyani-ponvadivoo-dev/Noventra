@@ -74,14 +74,29 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
+}
+
+.logo-mark {
+  width: 52px;
+  height: 52px;
+  padding: 6px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .logo img {
-  width: 42px;
-  height: 42px;
-  background: #ffffff;
-  border-radius: 10px;
+  width: 148%;
+  height: 148%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Heading and tick list */
