@@ -1,4 +1,6 @@
-    :root {
+   /* Shared Home Page Navbar Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+   :root {
     --primary: #4F16C8;
     --dark-purple: #30248C;
     --accent: #8B5CF6;
@@ -403,8 +405,7 @@ body {
     margin-bottom: 20px;
     color: var(--dark-purple);
 }
-/* Shared Home Page Navbar Styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 
 .home-navbar {
     width: 100%;
@@ -551,4 +552,122 @@ body {
 #applicationForm button {
     width: 100%;
 }
+}
+
+/* =================================
+   MOBILE NAVBAR - JOB DETAILS PAGE
+================================= */
+
+@media (max-width: 760px) {
+
+    .home-navbar {
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+        width: 100%;
+    }
+
+    /* Logo */
+    .nav-logo {
+        font-size: 21px;
+        gap: 8px;
+    }
+
+    .nav-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Hide desktop navigation */
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        color: #30238f;
+        cursor: pointer;
+    }
+
+    /* Mobile drawer */
+    .mobile-drawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: min(280px, 85vw);
+        height: 100vh;
+        height: 100dvh;
+        background: #30238f;
+        z-index: 2001;
+        padding: 25px 20px;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .mobile-drawer.open {
+        left: 0;
+    }
+
+    /* Close button */
+    .drawer-header {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 25px;
+    }
+
+    .drawer-close {
+        border: none;
+        background: transparent;
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Drawer links */
+    .drawer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .drawer-link {
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .drawer-link:hover,
+    .drawer-link.active {
+        color: #d8c8ff;
+    }
+
+    /* Profile / Login / Logout */
+    .drawer-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .drawer-actions a {
+        color: white !important;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* Job details mobile layout */
+    .job-layout {
+        grid-template-columns: 1fr;
+    }
 }
