@@ -32,6 +32,11 @@ body {
   box-shadow: 0 30px 80px rgba(91, 33, 182, 0.16);
 }
 
+.shell-signup {
+  height: auto;
+  min-height: 750px;
+}
+
 /* 4. Left purple panel
    Logo, heading, benefits list, and banner */
 .brand-panel {
@@ -77,16 +82,26 @@ body {
   font-weight: 800;
 }
 
-.logo img {
-  width: 42px;
-  height: 42px;
+.logo-mark {
+  width: 52px;
+  height: 52px;
+  padding: 6px;
+  box-sizing: border-box;
   background: #ffffff;
-  object-fit: contain;
-  border-radius: 10px;
-  padding:2px;
+  border-radius: 14px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 /* Heading and tick list */
 .brand-copy {
   position: relative;
@@ -153,6 +168,10 @@ body {
   padding: 48px 56px;
 }
 
+.shell-signup .form-panel {
+  padding: 40px 48px 36px;
+}
+
 .form-wrap {
   width: 100%;
   max-width: 420px;
@@ -203,6 +222,24 @@ form {
 
 .field input:focus {
   border-color: #7c3aed;
+}
+
+.field input.invalid {
+  border-color: #dc2626;
+}
+
+.field input.valid {
+  border-color: #16a34a;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.error:not(:empty) {
+  margin-top: 6px;
 }
 
 /* Remember me (login) and Terms (signup) */
