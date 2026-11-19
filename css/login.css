@@ -76,7 +76,6 @@ body {
   font-size: 24px;
   font-weight: 700;
 }
-
 .logo-mark {
   width: 52px;
   height: 52px;
@@ -90,14 +89,20 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
-
-.logo img {
+/* .logo img {
   width: 148%;
   height: 148%;
   max-width: none;
   object-fit: cover;
   object-position: center;
-}
+} */
+
+ .logo img {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 10px;
+} 
 
 /* Heading and tick list */
 .brand-copy {
