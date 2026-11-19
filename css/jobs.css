@@ -249,6 +249,94 @@ body {
   .sort-label + select { max-width: 145px; padding: 9px 6px; }
   .job-card { padding: 13px 11px; }
   .job-meta, .job-bottom { margin-left: 0; }
+   .home-navbar {
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .nav-logo {
+        font-size: 21px;
+        gap: 8px;
+    }
+
+    .nav-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        color: #30238f;
+        cursor: pointer;
+    }
+    /* Mobile Navigation Drawer */
+
+.mobile-drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background:  #30238f;
+    z-index: 2000;
+    padding: 25px 20px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+}
+
+.mobile-drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+.drawer-close {
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.drawer-link {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+.drawer-actions a {
+    color: #ffffff !important;
+}
+
+   
 }
 @media (max-width: 390px) {
   .brand { font-size: 17px; }

@@ -53,5 +53,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "index.html";
             });
         });
+        // Mobile Hamburger Menu
+
+const menuIcon = document.getElementById("menuico");
+const sideNav = document.getElementById("sidenav");
+const closeNav = document.getElementById("closenav");
+
+if (menuIcon && sideNav && closeNav) {
+
+    menuIcon.addEventListener("click", function () {
+        sideNav.classList.add("open");
+    });
+
+    closeNav.addEventListener("click", function () {
+        sideNav.classList.remove("open");
+    });
+
+}
 
 });
