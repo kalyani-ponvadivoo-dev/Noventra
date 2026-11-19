@@ -81,7 +81,10 @@ body {
   width: 42px;
   height: 42px;
   background: #ffffff;
+  object-fit: contain;
   border-radius: 10px;
+  padding:2px;
+  flex-shrink: 0;
 }
 
 /* Heading and tick list */
