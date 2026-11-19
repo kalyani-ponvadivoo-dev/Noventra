@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard| Noventra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="home-navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                <img src="./images/logo.png" alt="Noventra Logo">
+                <span>Noventra</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="jobs.html" class="nav-link">Find Jobs</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">Logout</a>
+            </div>
+
+            <button id="menuico" class="menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Navigation -->
+    <aside id="sidenav" class="mobile-drawer" aria-label="Mobile Navigation">
+
+        <div class="drawer-header">
+            <button id="closenav" class="drawer-close" aria-label="Close Navigation Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-link">Home</a>
+            <a href="jobs.html" class="drawer-link">Find Jobs</a>
+            <a href="index.html#about" class="drawer-link">About Us</a>
+            <a href="index.html#contact" class="drawer-link">Contact</a>
+
+            <!-- <a href="dashboard.html" class="drawer-link active">Dashboard</a> -->
+            <a href="#applications" class="drawer-link">My Applications</a>
+            <a href="#saved" class="drawer-link">Saved Jobs</a>
+            <a href="#profile" class="drawer-link">My Profile</a>
+
+            <div class="drawer-actions" id="drawerActions">
+                <a href="index.html" class="btn-drawer-login">Logout</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="dashboard-container">
+        <!--side bar-->
+        <div class="sidebar">
+            <a href="#overview" class="sidebar-link active">🏠 Dashboard</a>
+
+            <a href="#applications" class="sidebar-link">💼 My Applications</a>
+            <a href="#saved" class="sidebar-link">
+                ♡ Saved Jobs
+            </a>
+
+            <a href="#profile" class="sidebar-link">👤 My Profile</a>
+
+            <hr>
+
+            <!-- <p class="sidebar-logout" id="logoutBtn">⏻ Logout</p> -->
+        </div>
+        <p class="sidebar-logout"></p>
+
+        <div class="main-content">
+            <!--welcome section-->
+            <div class="welcome-section" id="overview">
+                <h1>Dashboard</h1>
+                <h2 id="welcomeMessage">Hello! 👋</h2>
+                <p>Here's an overview of your job search activity.</p>
+            </div>
+            <!--cards-->
+            <div class="cards">
+
+                <div class="card applied">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <h2 id="appliedCount">0</h2>
+                    <p>Applied Jobs</p>
+                </div>
+
+                <div class="card saved">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <h2 id="savedCount">0</h2>
+                    <p>Saved Jobs</p>
+                </div>
+
+                <div class="card available">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h2 id="availableJobsCount">0</h2>
+                    <p>Available Jobs</p>
+                </div>
+
+            </div>
+            <div class="bottom-section">
+
+                <div class="applications" id="applications">
+                    <h2>Recent Applications</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Company</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="applicationsList">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="recommended">
+                    <h2>Recommended Jobs</h2>
+
+                    <div class="job-cards" id="recommendedJobsList">
+                        <!-- Jobs will be displayed dynamically using JavaScript -->
+                    </div>
+                </div>
+                <div class="saved-jobs" id="saved">
+                    <h2>My Saved Jobs</h2>
+                    <div id="savedJobsList"></div>
+                </div>
+                <!-- My Profile Section -->
+                <div class="profile-section" id="profile">
+                    <h2>My Profile</h2>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">👤</div>
+
+                        <h3 id="profileName">User Name</h3>
+                        <p>Job Seeker</p>
+
+                        <div class="profile-details">
+                            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                            <p><strong>Location:</strong> India</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script src="js/jobData.js"></script>
+        <script src="js/dashboard.js"></script>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
